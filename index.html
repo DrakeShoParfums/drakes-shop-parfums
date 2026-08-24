@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Descubre perfumes y fragancias en Drakes Shop Parfums."
+    content="Drakes Shop Parfums - Catálogo de perfumes y fragancias."
   >
 
   <style>
@@ -21,11 +21,11 @@
 
     :root {
       --black: #111111;
-      --black-soft: #1d1d1d;
+      --black-soft: #1c1c1c;
       --cream: #f7f4ee;
       --white: #ffffff;
       --gold: #b9975b;
-      --gold-light: #d7bd87;
+      --gold-light: #d9c18b;
       --gray: #777777;
       --border: #e5e0d7;
       --whatsapp: #25d366;
@@ -38,9 +38,9 @@
       line-height: 1.5;
     }
 
-    /* =========================
+    /* ================================
        HEADER
-    ========================= */
+    ================================= */
 
     header {
       position: sticky;
@@ -55,6 +55,7 @@
       max-width: 1250px;
       margin: auto;
       padding: 18px 25px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -88,24 +89,25 @@
       color: var(--gold-light);
     }
 
-    /* =========================
+    /* ================================
        HERO
-    ========================= */
+    ================================= */
 
     .hero {
       background:
         linear-gradient(
           rgba(10,10,10,.72),
-          rgba(10,10,10,.82)
+          rgba(10,10,10,.84)
         ),
         linear-gradient(
           120deg,
-          #303030,
-          #090909
+          #333333,
+          #080808
         );
 
       color: white;
       text-align: center;
+
       padding: 85px 20px 95px;
     }
 
@@ -131,9 +133,9 @@
       font-size: 16px;
     }
 
-    /* =========================
+    /* ================================
        SEARCH
-    ========================= */
+    ================================= */
 
     .search-container {
       max-width: 900px;
@@ -147,15 +149,17 @@
       background: white;
       border-radius: 14px;
       padding: 8px;
+
       display: flex;
       align-items: center;
+
       box-shadow: 0 18px 45px rgba(0,0,0,.17);
     }
 
     .search-icon {
       width: 55px;
       text-align: center;
-      font-size: 25px;
+      font-size: 24px;
       color: #555;
     }
 
@@ -163,19 +167,22 @@
       flex: 1;
       border: none;
       outline: none;
+
       padding: 18px 10px;
+
       font-size: 16px;
       background: transparent;
     }
 
-    /* =========================
+    /* ================================
        CATEGORIES
-    ========================= */
+    ================================= */
 
     .categories {
       max-width: 1200px;
       margin: 45px auto 20px;
       padding: 0 20px;
+
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -185,10 +192,15 @@
     .category {
       border: 1px solid var(--border);
       background: white;
+
       padding: 11px 20px;
+
       border-radius: 30px;
+
       cursor: pointer;
+
       font-size: 14px;
+
       transition: .2s;
     }
 
@@ -199,9 +211,9 @@
       color: white;
     }
 
-    /* =========================
+    /* ================================
        MAIN
-    ========================= */
+    ================================= */
 
     main {
       max-width: 1250px;
@@ -213,7 +225,9 @@
       display: flex;
       justify-content: space-between;
       align-items: end;
+
       margin: 35px 0 20px;
+
       gap: 20px;
     }
 
@@ -228,47 +242,65 @@
       font-size: 13px;
     }
 
-    /* =========================
+    /* ================================
        FILTERS
-    ========================= */
+    ================================= */
 
     .filters {
       background: white;
+
       border: 1px solid var(--border);
+
       border-radius: 12px;
+
       padding: 18px;
+
       margin-bottom: 25px;
 
       display: flex;
       flex-wrap: wrap;
+
       gap: 12px;
     }
 
     .filters select {
       min-width: 170px;
+
       padding: 12px 14px;
+
       border: 1px solid var(--border);
+
       border-radius: 8px;
+
       background: white;
+
       outline: none;
+
       cursor: pointer;
     }
 
-    /* =========================
+    /* ================================
        PRODUCT GRID
-    ========================= */
+    ================================= */
 
     .products {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
       gap: 20px;
     }
 
     .product-card {
       background: white;
+
       border: 1px solid var(--border);
+
       border-radius: 12px;
+
       overflow: hidden;
+
       transition:
         transform .25s,
         box-shadow .25s;
@@ -276,7 +308,9 @@
 
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,.1);
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,.1);
     }
 
     .product-image {
@@ -295,14 +329,18 @@
       justify-content: center;
 
       position: relative;
+
       overflow: hidden;
     }
 
     .product-image img {
       width: 100%;
       height: 100%;
+
       object-fit: contain;
+
       padding: 20px;
+
       transition: transform .3s;
     }
 
@@ -312,6 +350,7 @@
 
     .gender-badge {
       position: absolute;
+
       left: 12px;
       top: 12px;
 
@@ -319,9 +358,11 @@
       color: white;
 
       padding: 6px 9px;
+
       border-radius: 20px;
 
       font-size: 10px;
+
       z-index: 2;
     }
 
@@ -331,43 +372,61 @@
 
     .brand {
       color: var(--gold);
+
       text-transform: uppercase;
+
       letter-spacing: 1.5px;
+
       font-weight: bold;
+
       font-size: 11px;
+
       margin-bottom: 6px;
     }
 
     .product-name {
       font-family: Georgia, serif;
+
       font-weight: normal;
+
       font-size: 19px;
+
       margin-bottom: 8px;
     }
 
     .product-details {
       color: var(--gray);
+
       font-size: 12px;
+
       margin-bottom: 15px;
     }
 
     .consult-button {
       width: 100%;
+
       border: none;
+
       background: var(--whatsapp);
+
       color: white;
+
       text-decoration: none;
 
       padding: 12px;
+
       border-radius: 8px;
 
       display: block;
+
       text-align: center;
 
       font-weight: bold;
+
       font-size: 13px;
 
       cursor: pointer;
+
       transition: .2s;
     }
 
@@ -377,11 +436,13 @@
 
     .details-button {
       width: 100%;
+
       margin-top: 8px;
 
       padding: 10px;
 
       border: 1px solid var(--black);
+
       background: white;
 
       border-radius: 8px;
@@ -396,19 +457,23 @@
       color: white;
     }
 
-    /* =========================
+    /* ================================
        NO RESULTS
-    ========================= */
+    ================================= */
 
     .no-results {
       display: none;
+
       text-align: center;
+
       padding: 80px 20px;
     }
 
     .no-results h3 {
       font-family: Georgia, serif;
+
       font-size: 30px;
+
       margin-bottom: 8px;
     }
 
@@ -416,15 +481,17 @@
       color: var(--gray);
     }
 
-    /* =========================
+    /* ================================
        MODAL
-    ========================= */
+    ================================= */
 
     .modal {
       position: fixed;
+
       inset: 0;
 
-      background: rgba(0,0,0,.75);
+      background:
+        rgba(0,0,0,.75);
 
       display: none;
 
@@ -444,6 +511,7 @@
 
     .modal-box {
       max-width: 900px;
+
       width: 100%;
 
       background: white;
@@ -476,12 +544,15 @@
 
       z-index: 5;
 
-      box-shadow: 0 3px 15px rgba(0,0,0,.15);
+      box-shadow:
+        0 3px 15px rgba(0,0,0,.15);
     }
 
     .modal-grid {
       display: grid;
-      grid-template-columns: 45% 55%;
+
+      grid-template-columns:
+        45% 55%;
     }
 
     .modal-image {
@@ -502,6 +573,7 @@
     .modal-image img {
       width: 100%;
       height: 100%;
+
       max-height: 560px;
 
       object-fit: contain;
@@ -515,33 +587,46 @@
 
     .modal-info h2 {
       font-family: Georgia, serif;
+
       font-size: 38px;
+
       font-weight: normal;
+
       margin: 8px 0 20px;
     }
 
     .info-row {
       padding: 13px 0;
-      border-bottom: 1px solid #eeeeee;
+
+      border-bottom:
+        1px solid #eeeeee;
+
       font-size: 14px;
     }
 
     .info-row strong {
       display: inline-block;
+
       width: 120px;
     }
 
     .tags {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 7px;
+
       margin-top: 9px;
     }
 
     .tag {
       background: #f2eee6;
+
       padding: 7px 10px;
+
       border-radius: 20px;
+
       font-size: 12px;
     }
 
@@ -565,9 +650,9 @@
       font-weight: bold;
     }
 
-    /* =========================
+    /* ================================
        FOOTER
-    ========================= */
+    ================================= */
 
     footer {
       margin-top: 70px;
@@ -583,7 +668,9 @@
 
     .footer-logo {
       font-family: Georgia, serif;
+
       font-size: 24px;
+
       letter-spacing: 2px;
     }
 
@@ -593,18 +680,21 @@
 
     footer p {
       margin-top: 9px;
+
       color: #999;
+
       font-size: 13px;
     }
 
-    /* =========================
+    /* ================================
        RESPONSIVE
-    ========================= */
+    ================================= */
 
     @media (max-width: 1050px) {
 
       .products {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+          repeat(3, 1fr);
       }
 
     }
@@ -632,7 +722,9 @@
       }
 
       .products {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
+
         gap: 12px;
       }
 
@@ -650,7 +742,9 @@
 
       .filters {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+          1fr 1fr;
       }
 
       .filters select {
@@ -680,7 +774,8 @@
     @media (max-width: 450px) {
 
       .products {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .product-image {
@@ -704,9 +799,7 @@
 <body>
 
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+  <!-- HEADER -->
 
   <header>
 
@@ -726,10 +819,6 @@
           Perfumes
         </a>
 
-        <a href="#marcas">
-          Marcas
-        </a>
-
         <a href="#contacto">
           Contacto
         </a>
@@ -741,9 +830,7 @@
   </header>
 
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  <!-- HERO -->
 
   <section class="hero" id="inicio">
 
@@ -763,9 +850,7 @@
   </section>
 
 
-  <!-- =========================
-       SEARCH
-  ========================== -->
+  <!-- SEARCH -->
 
   <div class="search-container">
 
@@ -787,9 +872,7 @@
   </div>
 
 
-  <!-- =========================
-       CATEGORIES
-  ========================== -->
+  <!-- CATEGORIES -->
 
   <div class="categories">
 
@@ -824,9 +907,7 @@
   </div>
 
 
-  <!-- =========================
-       MAIN
-  ========================== -->
+  <!-- MAIN -->
 
   <main id="catalogo">
 
@@ -847,9 +928,7 @@
     </div>
 
 
-    <!-- =========================
-         FILTERS
-    ========================== -->
+    <!-- FILTERS -->
 
     <div class="filters">
 
@@ -905,6 +984,10 @@
           75 ml
         </option>
 
+        <option value="80">
+          80 ml
+        </option>
+
         <option value="100">
           100 ml
         </option>
@@ -948,15 +1031,15 @@
     </div>
 
 
-    <!-- =========================
-         PRODUCTS
-    ========================== -->
+    <!-- PRODUCTS -->
 
     <div
       class="products"
       id="products"
     ></div>
 
+
+    <!-- NO RESULTS -->
 
     <div
       class="no-results"
@@ -976,9 +1059,7 @@
   </main>
 
 
-  <!-- =========================
-       MODAL
-  ========================== -->
+  <!-- MODAL -->
 
   <div
     class="modal"
@@ -1022,9 +1103,7 @@
           ></h2>
 
 
-          <div
-            class="info-row"
-          >
+          <div class="info-row">
 
             <strong>
               Género
@@ -1035,9 +1114,7 @@
           </div>
 
 
-          <div
-            class="info-row"
-          >
+          <div class="info-row">
 
             <strong>
               Tamaño
@@ -1048,9 +1125,7 @@
           </div>
 
 
-          <div
-            class="info-row"
-          >
+          <div class="info-row">
 
             <strong>
               Concentración
@@ -1061,9 +1136,7 @@
           </div>
 
 
-          <div
-            class="info-row"
-          >
+          <div class="info-row">
 
             <strong>
               Familia
@@ -1074,9 +1147,7 @@
           </div>
 
 
-          <div
-            class="info-row"
-          >
+          <div class="info-row">
 
             <strong>
               Acordes
@@ -1090,9 +1161,7 @@
           </div>
 
 
-          <div
-            class="info-row"
-          >
+          <div class="info-row">
 
             <strong>
               Notas
@@ -1124,9 +1193,7 @@
   </div>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- FOOTER -->
 
   <footer id="contacto">
 
@@ -1145,169 +1212,29 @@
   </footer>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
+  <!-- =====================================================
+       MUY IMPORTANTE:
+       CARGAMOS PRIMERO TU CATÁLOGO
+  ====================================================== -->
+
+  <script src="perfumes.js"></script>
+
+
+  <!-- =====================================================
+       FUNCIONAMIENTO DE LA PÁGINA
+  ====================================================== -->
 
   <script>
 
     /*
-    ============================================================
-    DATOS TEMPORALES
+    ==========================================================
+    CONFIGURA AQUÍ TU WHATSAPP
+    ==========================================================
 
-    Después vamos a sacar estos perfumes de aquí y ponerlos
-    en un archivo separado llamado perfumes.js.
+    POR AHORA DEJAMOS UN NÚMERO DE PRUEBA.
 
-    NO NECESITAS AGREGAR LOS 140 AQUÍ.
-    ============================================================
-    */
-
-
-    const perfumes = [
-
-      {
-        nombre: "Dior Sauvage Eau de Parfum",
-        marca: "Dior",
-        ml: 100,
-        genero: "Hombre",
-        tipo: "Eau de Parfum",
-        familia: "Aromática",
-        acordes: [
-          "Fresco",
-          "Amaderado",
-          "Especiado"
-        ],
-        notas: [
-          "Bergamota",
-          "Pimienta",
-          "Lavanda"
-        ],
-        imagen: "imagenes/dior-sauvage-edp.jpg"
-      },
-
-
-      {
-        nombre: "Versace Eros",
-        marca: "Versace",
-        ml: 100,
-        genero: "Hombre",
-        tipo: "Eau de Toilette",
-        familia: "Aromática",
-        acordes: [
-          "Dulce",
-          "Fresco",
-          "Amaderado"
-        ],
-        notas: [
-          "Menta",
-          "Manzana",
-          "Vainilla"
-        ],
-        imagen: "imagenes/versace-eros.jpg"
-      },
-
-
-      {
-        nombre: "Jean Paul Gaultier Le Male",
-        marca: "Jean Paul Gaultier",
-        ml: 125,
-        genero: "Hombre",
-        tipo: "Eau de Toilette",
-        familia: "Oriental",
-        acordes: [
-          "Dulce",
-          "Aromático",
-          "Vainilla"
-        ],
-        notas: [
-          "Lavanda",
-          "Menta",
-          "Vainilla"
-        ],
-        imagen: "imagenes/jpg-le-male.jpg"
-      },
-
-
-      {
-        nombre: "Lattafa Khamrah",
-        marca: "Lattafa",
-        ml: 100,
-        genero: "Unisex",
-        tipo: "Eau de Parfum",
-        familia: "Oriental",
-        acordes: [
-          "Dulce",
-          "Especiado",
-          "Vainilla"
-        ],
-        notas: [
-          "Canela",
-          "Dátiles",
-          "Vainilla"
-        ],
-        imagen: "imagenes/lattafa-khamrah.jpg"
-      },
-
-
-      {
-        nombre: "Carolina Herrera 212 VIP",
-        marca: "Carolina Herrera",
-        ml: 80,
-        genero: "Mujer",
-        tipo: "Eau de Parfum",
-        familia: "Floral",
-        acordes: [
-          "Dulce",
-          "Floral",
-          "Amaderado"
-        ],
-        notas: [
-          "Maracuyá",
-          "Gardenia",
-          "Vainilla"
-        ],
-        imagen: "imagenes/212-vip.jpg"
-      },
-
-
-      {
-        nombre: "Acqua di Gio",
-        marca: "Giorgio Armani",
-        ml: 100,
-        genero: "Hombre",
-        tipo: "Eau de Toilette",
-        familia: "Acuática",
-        acordes: [
-          "Acuático",
-          "Cítrico",
-          "Fresco"
-        ],
-        notas: [
-          "Limón",
-          "Jazmín",
-          "Cedro"
-        ],
-        imagen: "imagenes/acqua-di-gio.jpg"
-      }
-
-    ];
-
-
-    /*
-    ============================================================
-    WHATSAPP
-    ============================================================
-
-    MÁS ADELANTE PONDREMOS TU NÚMERO REAL.
-
-    Formato México:
-
-    52 + número
-
-    Ejemplo ficticio:
-    5215512345678
-
-    ============================================================
+    Después pondremos tu número real.
+    ==========================================================
     */
 
     const WHATSAPP =
@@ -1315,9 +1242,9 @@
 
 
     /*
-    ============================================================
+    ==========================================================
     ELEMENTOS
-    ============================================================
+    ==========================================================
     */
 
     const products =
@@ -1347,69 +1274,123 @@
     const sortFilter =
       document.getElementById("sortFilter");
 
+    const modal =
+      document.getElementById("modal");
+
+    const closeModal =
+      document.getElementById("closeModal");
+
 
     let currentGender = "Todos";
 
 
     /*
-    ============================================================
-    CARGAR FILTROS
-    ============================================================
+    ==========================================================
+    COMPROBAR CATÁLOGO
+    ==========================================================
     */
 
-    const brands =
-      [...new Set(
-        perfumes.map(
-          perfume => perfume.marca
-        )
-      )].sort();
+    if (
+      typeof perfumes === "undefined"
+    ) {
 
+      counter.textContent =
+        "No se pudo cargar el catálogo.";
 
-    brands.forEach(brand => {
+      console.error(
+        "No se encontró perfumes.js"
+      );
 
-      const option =
-        document.createElement("option");
-
-      option.value = brand;
-
-      option.textContent = brand;
-
-      brandFilter.appendChild(option);
-
-    });
-
-
-    const families =
-      [...new Set(
-        perfumes.map(
-          perfume => perfume.familia
-        )
-      )].sort();
-
-
-    families.forEach(family => {
-
-      const option =
-        document.createElement("option");
-
-      option.value = family;
-
-      option.textContent = family;
-
-      familyFilter.appendChild(option);
-
-    });
+    }
 
 
     /*
-    ============================================================
+    ==========================================================
+    CREAR FILTROS DE MARCAS
+    ==========================================================
+    */
+
+    function loadFilters() {
+
+      if (
+        typeof perfumes === "undefined"
+      ) return;
+
+
+      const brands =
+        [
+          ...new Set(
+            perfumes.map(
+              perfume =>
+                perfume.marca
+            )
+          )
+        ].sort();
+
+
+      brands.forEach(
+        brand => {
+
+          const option =
+            document.createElement(
+              "option"
+            );
+
+          option.value = brand;
+
+          option.textContent = brand;
+
+          brandFilter.appendChild(
+            option
+          );
+
+        }
+      );
+
+
+      const families =
+        [
+          ...new Set(
+            perfumes.map(
+              perfume =>
+                perfume.familia
+            )
+          )
+        ].sort();
+
+
+      families.forEach(
+        family => {
+
+          const option =
+            document.createElement(
+              "option"
+            );
+
+          option.value = family;
+
+          option.textContent = family;
+
+          familyFilter.appendChild(
+            option
+          );
+
+        }
+      );
+
+    }
+
+
+    /*
+    ==========================================================
     CREAR TARJETAS
-    ============================================================
+    ==========================================================
     */
 
     function renderProducts(list) {
 
       products.innerHTML = "";
+
 
       counter.textContent =
         `${list.length} ${
@@ -1419,7 +1400,9 @@
         }`;
 
 
-      if (list.length === 0) {
+      if (
+        list.length === 0
+      ) {
 
         noResults.style.display =
           "block";
@@ -1433,110 +1416,106 @@
         "none";
 
 
-      list.forEach(perfume => {
+      list.forEach(
+        perfume => {
 
-        const card =
-          document.createElement("article");
-
-
-        card.className =
-          "product-card";
-
-
-        const message =
-          `Hola, me interesa ${perfume.nombre} de ${perfume.ml} ml. ¿Me pueden compartir precio y disponibilidad?`;
+          const card =
+            document.createElement(
+              "article"
+            );
 
 
-        const whatsappUrl =
-          `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
+          card.className =
+            "product-card";
 
 
-        card.innerHTML = `
-
-          <div class="product-image">
-
-            <div class="gender-badge">
-              ${perfume.genero}
-            </div>
-
-            <img
-              src="${perfume.imagen}"
-              alt="${perfume.nombre}"
-              onerror="this.style.opacity='0'"
-            >
-
-          </div>
+          const message =
+            `Hola, me interesa ${perfume.nombre} de ${perfume.ml} ml. ¿Me pueden compartir precio y disponibilidad?`;
 
 
-          <div class="product-info">
-
-            <div class="brand">
-              ${perfume.marca}
-            </div>
-
-
-            <h3 class="product-name">
-              ${perfume.nombre}
-            </h3>
+          const whatsappUrl =
+            `https://wa.me/${WHATSAPP}?text=${
+              encodeURIComponent(message)
+            }`;
 
 
-            <div class="product-details">
-              ${perfume.tipo}
-              ·
-              ${perfume.ml} ml
+          card.innerHTML = `
+
+            <div class="product-image">
+
+              <div class="gender-badge">
+                ${perfume.genero}
+              </div>
+
+              <img
+                src="${perfume.imagen}"
+                alt="${perfume.nombre}"
+                onerror="this.style.opacity='0'"
+              >
+
             </div>
 
 
-            <a
-              href="${whatsappUrl}"
-              target="_blank"
-              class="consult-button"
-            >
-              💬 Consultar por WhatsApp
-            </a>
+            <div class="product-info">
+
+              <div class="brand">
+                ${perfume.marca}
+              </div>
 
 
-            <button
-              class="details-button"
-              onclick="openProduct('${escapeQuotes(perfume.nombre)}')"
-            >
-              Ver detalles
-            </button>
-
-          </div>
-
-        `;
+              <h3 class="product-name">
+                ${perfume.nombre}
+              </h3>
 
 
-        products.appendChild(card);
+              <div class="product-details">
+                ${perfume.tipo}
+                ·
+                ${perfume.ml} ml
+              </div>
 
-      });
+
+              <a
+                href="${whatsappUrl}"
+                target="_blank"
+                class="consult-button"
+              >
+                💬 Consultar por WhatsApp
+              </a>
+
+
+              <button
+                class="details-button"
+                onclick="openProduct(${JSON.stringify(perfume.nombre)})"
+              >
+                Ver detalles
+              </button>
+
+            </div>
+
+          `;
+
+
+          products.appendChild(card);
+
+        }
+      );
 
     }
 
 
     /*
-    ============================================================
-    SEGURIDAD PARA NOMBRES
-    ============================================================
-    */
-
-    function escapeQuotes(text) {
-
-      return text
-        .replace(/\\/g, "\\\\")
-        .replace(/'/g, "\\'");
-
-    }
-
-
-    /*
-    ============================================================
-    FILTRAR
-    ============================================================
+    ==========================================================
+    FILTRAR PRODUCTOS
+    ==========================================================
     */
 
     function filterProducts() {
+
+      if (
+        typeof perfumes === "undefined"
+      ) return;
+
 
       const text =
         search.value
@@ -1561,73 +1540,81 @@
 
 
       let result =
-        perfumes.filter(perfume => {
+        perfumes.filter(
+          perfume => {
+
+            const searchable = `
+
+              ${perfume.nombre}
+
+              ${perfume.marca}
+
+              ${perfume.genero}
+
+              ${perfume.familia}
+
+              ${perfume.acordes.join(" ")}
+
+              ${perfume.notas.join(" ")}
+
+            `.toLowerCase();
 
 
-          const searchable = `
-
-            ${perfume.nombre}
-
-            ${perfume.marca}
-
-            ${perfume.genero}
-
-            ${perfume.familia}
-
-            ${perfume.acordes.join(" ")}
-
-            ${perfume.notas.join(" ")}
-
-          `.toLowerCase();
+            const matchesText =
+              !text ||
+              searchable.includes(text);
 
 
-          const matchesText =
-            !text ||
-            searchable.includes(text);
+            const matchesGender =
+              currentGender === "Todos" ||
+              perfume.genero ===
+                currentGender;
 
 
-          const matchesGender =
-            currentGender === "Todos" ||
-            perfume.genero === currentGender;
+            const matchesBrand =
+              selectedBrand === "Todos" ||
+              perfume.marca ===
+                selectedBrand;
 
 
-          const matchesBrand =
-            selectedBrand === "Todos" ||
-            perfume.marca === selectedBrand;
+            const matchesType =
+              selectedType === "Todos" ||
+              perfume.tipo ===
+                selectedType;
 
 
-          const matchesType =
-            selectedType === "Todos" ||
-            perfume.tipo === selectedType;
+            const matchesMl =
+              selectedMl === "Todos" ||
+              perfume.ml ===
+                Number(selectedMl);
 
 
-          const matchesMl =
-            selectedMl === "Todos" ||
-            perfume.ml === Number(selectedMl);
+            const matchesFamily =
+              selectedFamily === "Todos" ||
+              perfume.familia ===
+                selectedFamily;
 
 
-          const matchesFamily =
-            selectedFamily === "Todos" ||
-            perfume.familia === selectedFamily;
+            return (
+              matchesText &&
+              matchesGender &&
+              matchesBrand &&
+              matchesType &&
+              matchesMl &&
+              matchesFamily
+            );
 
-
-          return (
-            matchesText &&
-            matchesGender &&
-            matchesBrand &&
-            matchesType &&
-            matchesMl &&
-            matchesFamily
-          );
-
-        });
+          }
+        );
 
 
       /*
-      ORDEN
+      ORDENAR
       */
 
-      if (sortFilter.value === "az") {
+      if (
+        sortFilter.value === "az"
+      ) {
 
         result.sort(
           (a, b) =>
@@ -1639,7 +1626,9 @@
       }
 
 
-      if (sortFilter.value === "za") {
+      if (
+        sortFilter.value === "za"
+      ) {
 
         result.sort(
           (a, b) =>
@@ -1657,49 +1646,54 @@
 
 
     /*
-    ============================================================
+    ==========================================================
     CATEGORÍAS
-    ============================================================
+    ==========================================================
     */
 
     document
       .querySelectorAll(".category")
-      .forEach(button => {
+      .forEach(
+        button => {
 
-        button.addEventListener(
-          "click",
-          () => {
+          button.addEventListener(
+            "click",
+            () => {
 
-            document
-              .querySelectorAll(".category")
-              .forEach(btn =>
-                btn.classList.remove(
-                  "active"
+              document
+                .querySelectorAll(
+                  ".category"
                 )
+                .forEach(
+                  btn =>
+                    btn.classList.remove(
+                      "active"
+                    )
+                );
+
+
+              button.classList.add(
+                "active"
               );
 
 
-            button.classList.add(
-              "active"
-            );
+              currentGender =
+                button.dataset.gender;
 
 
-            currentGender =
-              button.dataset.gender;
+              filterProducts();
 
+            }
+          );
 
-            filterProducts();
-
-          }
-        );
-
-      });
+        }
+      );
 
 
     /*
-    ============================================================
+    ==========================================================
     EVENTOS
-    ============================================================
+    ==========================================================
     */
 
     search.addEventListener(
@@ -1739,17 +1733,10 @@
 
 
     /*
-    ============================================================
-    MODAL
-    ============================================================
+    ==========================================================
+    ABRIR PERFUME
+    ==========================================================
     */
-
-    const modal =
-      document.getElementById("modal");
-
-    const closeModal =
-      document.getElementById("closeModal");
-
 
     function openProduct(name) {
 
@@ -1763,62 +1750,61 @@
       if (!perfume) return;
 
 
-      document
-        .getElementById("modalImage")
-        .src =
+      document.getElementById(
+        "modalImage"
+      ).src =
         perfume.imagen;
 
 
-      document
-        .getElementById("modalImage")
-        .alt =
+      document.getElementById(
+        "modalImage"
+      ).alt =
         perfume.nombre;
 
 
-      document
-        .getElementById("modalBrand")
-        .textContent =
+      document.getElementById(
+        "modalBrand"
+      ).textContent =
         perfume.marca;
 
 
-      document
-        .getElementById("modalName")
-        .textContent =
+      document.getElementById(
+        "modalName"
+      ).textContent =
         perfume.nombre;
 
 
-      document
-        .getElementById("modalGender")
-        .textContent =
+      document.getElementById(
+        "modalGender"
+      ).textContent =
         perfume.genero;
 
 
-      document
-        .getElementById("modalMl")
-        .textContent =
+      document.getElementById(
+        "modalMl"
+      ).textContent =
         perfume.ml + " ml";
 
 
-      document
-        .getElementById("modalType")
-        .textContent =
+      document.getElementById(
+        "modalType"
+      ).textContent =
         perfume.tipo;
 
 
-      document
-        .getElementById("modalFamily")
-        .textContent =
+      document.getElementById(
+        "modalFamily"
+      ).textContent =
         perfume.familia;
 
 
-      const accordContainer =
+      const accords =
         document.getElementById(
           "modalAccords"
         );
 
 
-      accordContainer.innerHTML =
-        "";
+      accords.innerHTML = "";
 
 
       perfume.acordes.forEach(
@@ -1835,7 +1821,7 @@
           tag.textContent =
             acorde;
 
-          accordContainer.appendChild(
+          accords.appendChild(
             tag
           );
 
@@ -1843,14 +1829,13 @@
       );
 
 
-      const notesContainer =
+      const notes =
         document.getElementById(
           "modalNotes"
         );
 
 
-      notesContainer.innerHTML =
-        "";
+      notes.innerHTML = "";
 
 
       perfume.notas.forEach(
@@ -1867,7 +1852,7 @@
           tag.textContent =
             nota;
 
-          notesContainer.appendChild(
+          notes.appendChild(
             tag
           );
 
@@ -1879,12 +1864,12 @@
         `Hola, me interesa ${perfume.nombre} de ${perfume.ml} ml. ¿Me pueden compartir precio y disponibilidad?`;
 
 
-      document
-        .getElementById(
-          "modalWhatsapp"
-        )
-        .href =
-        `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
+      document.getElementById(
+        "modalWhatsapp"
+      ).href =
+        `https://wa.me/${WHATSAPP}?text=${
+          encodeURIComponent(message)
+        }`;
 
 
       modal.classList.add(
@@ -1895,7 +1880,9 @@
 
 
     /*
+    ==========================================================
     CERRAR MODAL
+    ==========================================================
     */
 
     closeModal.addEventListener(
@@ -1929,14 +1916,19 @@
 
 
     /*
-    ============================================================
+    ==========================================================
     INICIAR
-    ============================================================
+    ==========================================================
     */
 
-    renderProducts(perfumes);
+    loadFilters();
+
+    renderProducts(
+      perfumes
+    );
 
   </script>
+
 
 </body>
 </html>
