@@ -646,8 +646,9 @@ const perfumes = [
     marca: "Dior",
     ml: null,
     genero: "Hombre",
-    tipo: "Eau de Parfum / Parfum",
+    tipo: "Eau de Toilette / Eau de Parfum / Parfum",
     presentaciones: [
+      "Eau de Toilette",
       "Eau de Parfum",
       "Parfum"
     ],
