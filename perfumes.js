@@ -420,12 +420,21 @@ const perfumes = [
     imagen: "imagenes/ch-bad-boy-cobalt.jpg"
   },
 
+  // ============================
+  // 212
+  // ============================
+
   {
     nombre: "212 VIP Black",
     marca: "Carolina Herrera",
     ml: null,
     genero: "Hombre",
-    tipo: "Eau de Parfum",
+    tipo: "Eau de Toilette / Eau de Parfum / Parfum",
+    presentaciones: [
+      "Eau de Toilette",
+      "Eau de Parfum",
+      "Parfum"
+    ],
     familia: "",
     acordes: [],
     notas: [],
@@ -437,7 +446,12 @@ const perfumes = [
     marca: "Carolina Herrera",
     ml: null,
     genero: "Hombre",
-    tipo: "Eau de Toilette",
+    tipo: "Eau de Toilette / Eau de Parfum / Parfum",
+    presentaciones: [
+      "Eau de Toilette",
+      "Eau de Parfum",
+      "Parfum"
+    ],
     familia: "",
     acordes: [],
     notas: [],
@@ -449,7 +463,12 @@ const perfumes = [
     marca: "Carolina Herrera",
     ml: null,
     genero: "Hombre",
-    tipo: "Eau de Toilette",
+    tipo: "Eau de Toilette / Eau de Parfum / Parfum",
+    presentaciones: [
+      "Eau de Toilette",
+      "Eau de Parfum",
+      "Parfum"
+    ],
     familia: "",
     acordes: [],
     notas: [],
@@ -461,7 +480,7 @@ const perfumes = [
     marca: "Carolina Herrera",
     ml: null,
     genero: "Hombre",
-    tipo: "Eau de Parfum",
+    tipo: "Elixir",
     familia: "",
     acordes: [],
     notas: [],
@@ -663,7 +682,7 @@ const perfumes = [
     marca: "Dior",
     ml: null,
     genero: "Hombre",
-    tipo: "Parfum",
+    tipo: "Elixir",
     familia: "",
     acordes: [],
     notas: [],
