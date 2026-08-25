@@ -220,7 +220,7 @@ const perfumes = [
 
 
   // ============================
-  // PACO RABANNE / RABANNE
+  // RABANNE
   // ============================
 
   {
@@ -601,23 +601,15 @@ const perfumes = [
     marca: "Giorgio Armani",
     ml: null,
     genero: "Hombre",
-    tipo: "Parfum",
+    tipo: "Eau de Parfum / Parfum",
+    presentaciones: [
+      "Eau de Parfum",
+      "Parfum"
+    ],
     familia: "",
     acordes: [],
     notas: [],
-    imagen: "imagenes/acqua-di-gio-profondo-parfum.jpg"
-  },
-
-  {
-    nombre: "Acqua di Giò Profondo",
-    marca: "Giorgio Armani",
-    ml: null,
-    genero: "Hombre",
-    tipo: "Eau de Parfum",
-    familia: "",
-    acordes: [],
-    notas: [],
-    imagen: "imagenes/acqua-di-gio-profondo-edp.jpg"
+    imagen: "imagenes/acqua-di-gio-profondo.jpg"
   },
 
   {
