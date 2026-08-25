@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>Drakes Shop Parfums</title>
 
-<meta name="description" content="Drakes Shop Parfums - Catálogo de perfumes y fragancias.">
+<meta
+  name="description"
+  content="Drakes Shop Parfums - Catálogo de perfumes y fragancias."
+>
 
 <style>
 
@@ -34,6 +43,7 @@ body {
   color: var(--black);
   line-height: 1.5;
 }
+
 
 /* =========================
    HEADER
@@ -78,12 +88,12 @@ nav a {
   color: white;
   text-decoration: none;
   font-size: 14px;
-  transition: .2s;
 }
 
 nav a:hover {
   color: var(--gold-light);
 }
+
 
 /* =========================
    HERO
@@ -128,6 +138,7 @@ nav a:hover {
   font-size: 16px;
 }
 
+
 /* =========================
    SEARCH
 ========================= */
@@ -165,6 +176,7 @@ nav a:hover {
   background: transparent;
 }
 
+
 /* =========================
    CATEGORIES
 ========================= */
@@ -196,6 +208,7 @@ nav a:hover {
   color: white;
 }
 
+
 /* =========================
    MAIN
 ========================= */
@@ -225,6 +238,7 @@ main {
   font-size: 13px;
 }
 
+
 /* =========================
    FILTERS
 ========================= */
@@ -249,6 +263,7 @@ main {
   outline: none;
   cursor: pointer;
 }
+
 
 /* =========================
    PRODUCTS
@@ -347,8 +362,9 @@ main {
   margin-bottom: 15px;
 }
 
+
 /* =========================
-   PRESENTACIONES
+   TAGS
 ========================= */
 
 .presentation-list {
@@ -365,6 +381,7 @@ main {
   border-radius: 12px;
   font-size: 10px;
 }
+
 
 /* =========================
    BUTTONS
@@ -383,7 +400,6 @@ main {
   font-weight: bold;
   font-size: 13px;
   cursor: pointer;
-  transition: .2s;
 }
 
 .consult-button:hover {
@@ -406,6 +422,7 @@ main {
   color: white;
 }
 
+
 /* =========================
    NO RESULTS
 ========================= */
@@ -425,6 +442,7 @@ main {
 .no-results p {
   color: var(--gray);
 }
+
 
 /* =========================
    MODAL
@@ -560,6 +578,7 @@ main {
   font-weight: bold;
 }
 
+
 /* =========================
    FOOTER
 ========================= */
@@ -587,6 +606,7 @@ footer p {
   color: #999;
   font-size: 13px;
 }
+
 
 /* =========================
    RESPONSIVE
@@ -689,9 +709,12 @@ footer p {
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =========================
      HEADER
@@ -832,7 +855,9 @@ footer p {
   </div>
 
 
-  <!-- FILTERS -->
+  <!-- =========================
+       FILTROS
+  ========================= -->
 
   <div class="filters">
 
@@ -863,8 +888,8 @@ footer p {
         Parfum
       </option>
 
-      <option value="Extrait">
-        Extrait
+      <option value="Elixir">
+        Elixir
       </option>
 
     </select>
@@ -890,6 +915,10 @@ footer p {
 
       <option value="80">
         80 ml
+      </option>
+
+      <option value="90">
+        90 ml
       </option>
 
       <option value="100">
@@ -935,7 +964,9 @@ footer p {
   </div>
 
 
-  <!-- PRODUCTS -->
+  <!-- =========================
+       PRODUCTOS
+  ========================= -->
 
   <div
     class="products"
@@ -943,7 +974,9 @@ footer p {
   ></div>
 
 
-  <!-- NO RESULTS -->
+  <!-- =========================
+       SIN RESULTADOS
+  ========================= -->
 
   <div
     class="no-results"
@@ -1037,7 +1070,7 @@ footer p {
         <div class="info-row">
 
           <strong>
-            Presentaciones
+            Presentación
           </strong>
 
           <div
@@ -1091,6 +1124,7 @@ footer p {
           id="modalWhatsapp"
           class="modal-whatsapp"
           target="_blank"
+          rel="noopener noreferrer"
           href="#"
         >
           💬 Consultar por WhatsApp
@@ -1127,7 +1161,7 @@ footer p {
 
 
 <!-- =========================
-     CATÁLOGO
+     PERFUMES
 ========================= -->
 
 <script src="perfumes.js"></script>
@@ -1184,43 +1218,66 @@ let currentGender = "Todos";
 
 
 /* =========================================
-   SEGURIDAD PARA DATOS VACÍOS
+   CONVERTIR CUALQUIER DATO A TEXTO
 ========================================= */
 
-function safeArray(value) {
+function cleanValue(value) {
 
-  if (Array.isArray(value)) {
-    return value;
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return "";
   }
 
-  if (value === null || value === undefined) {
-    return [];
-  }
-
-  return [value];
+  return String(value).trim();
 
 }
 
 
 /* =========================================
-   TEXTO DE PRESENTACIONES
+   CONVERTIR TEXTO EN LISTA
+   Ejemplo:
+
+   "100, 150"
+   "100 / 150"
+   "100 · 150"
+
+   se convierten automáticamente
 ========================================= */
 
-function getPresentations(perfume) {
+function toList(value) {
 
-  if (Array.isArray(perfume.tipos)) {
-    return perfume.tipos;
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return [];
   }
 
-  if (Array.isArray(perfume.presentaciones)) {
-    return perfume.presentaciones;
+
+  if (Array.isArray(value)) {
+
+    return value
+      .map(item => cleanValue(item))
+      .filter(Boolean);
+
   }
 
-  if (perfume.tipo) {
-    return [perfume.tipo];
+
+  const text =
+    cleanValue(value);
+
+
+  if (!text) {
+    return [];
   }
 
-  return [];
+
+  return text
+    .split(/[,/|·]+/)
+    .map(item => item.trim())
+    .filter(Boolean);
 
 }
 
@@ -1231,118 +1288,48 @@ function getPresentations(perfume) {
 
 function getSizes(perfume) {
 
-  if (Array.isArray(perfume.tamanos)) {
-    return perfume.tamanos;
-  }
-
-  if (Array.isArray(perfume.tamaños)) {
-    return perfume.tamaños;
-  }
-
-  if (Array.isArray(perfume.ml)) {
-    return perfume.ml;
-  }
-
-  if (perfume.ml) {
-    return [perfume.ml];
-  }
-
-  return [];
+  return toList(
+    perfume.ml
+  );
 
 }
 
 
 /* =========================================
-   TEXTO DE PRESENTACIONES
+   ACORDES
 ========================================= */
 
-function presentationText(perfume) {
+function getAccords(perfume) {
 
-  const presentations =
-    getPresentations(perfume);
-
-  if (!presentations.length) {
-    return "Presentación por confirmar";
-  }
-
-  return presentations.join(" · ");
+  return toList(
+    perfume.acordes
+  );
 
 }
 
 
 /* =========================================
-   TEXTO DE TAMAÑOS
+   NOTAS
 ========================================= */
 
-function sizeText(perfume) {
+function getNotes(perfume) {
 
-  const sizes =
-    getSizes(perfume);
-
-  if (!sizes.length) {
-    return "Tamaños por confirmar";
-  }
-
-  return sizes
-    .map(size => `${size} ml`)
-    .join(" · ");
+  return toList(
+    perfume.notas
+  );
 
 }
 
 
 /* =========================================
-   CARGAR FILTROS
+   PRESENTACIÓN
 ========================================= */
 
-function loadFilters() {
+function getTypes(perfume) {
 
-  if (typeof perfumes === "undefined") {
-    return;
-  }
-
-
-  const brands = [
-    ...new Set(
-      perfumes
-        .map(perfume => perfume.marca)
-        .filter(Boolean)
-    )
-  ].sort();
-
-
-  brands.forEach(brand => {
-
-    const option =
-      document.createElement("option");
-
-    option.value = brand;
-    option.textContent = brand;
-
-    brandFilter.appendChild(option);
-
-  });
-
-
-  const families = [
-    ...new Set(
-      perfumes
-        .map(perfume => perfume.familia)
-        .filter(Boolean)
-    )
-  ].sort();
-
-
-  families.forEach(family => {
-
-    const option =
-      document.createElement("option");
-
-    option.value = family;
-    option.textContent = family;
-
-    familyFilter.appendChild(option);
-
-  });
+  return toList(
+    perfume.tipo
+  );
 
 }
 
@@ -1357,9 +1344,106 @@ function createTag(text) {
     document.createElement("span");
 
   tag.className = "tag";
-  tag.textContent = text;
+
+  tag.textContent =
+    cleanValue(text);
 
   return tag;
+
+}
+
+
+/* =========================================
+   CARGAR FILTROS
+========================================= */
+
+function loadFilters() {
+
+  if (
+    typeof perfumes === "undefined"
+  ) {
+    return;
+  }
+
+
+  /* =========================
+     MARCAS
+  ========================= */
+
+  const brands = [
+    ...new Set(
+
+      perfumes
+        .map(perfume =>
+          cleanValue(perfume.marca)
+        )
+        .filter(Boolean)
+
+    )
+  ].sort();
+
+
+  brands.forEach(brand => {
+
+    const option =
+      document.createElement("option");
+
+    option.value = brand;
+
+    option.textContent = brand;
+
+    brandFilter.appendChild(option);
+
+  });
+
+
+  /* =========================
+     FAMILIAS
+  ========================= */
+
+  const families = [
+    ...new Set(
+
+      perfumes
+        .map(perfume =>
+          cleanValue(perfume.familia)
+        )
+        .filter(Boolean)
+
+    )
+  ].sort();
+
+
+  families.forEach(family => {
+
+    const option =
+      document.createElement("option");
+
+    option.value = family;
+
+    option.textContent = family;
+
+    familyFilter.appendChild(option);
+
+  });
+
+}
+
+
+/* =========================================
+   ESCAPAR HTML
+========================================= */
+
+function escapeHTML(value) {
+
+  return String(
+    value ?? ""
+  )
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 
 }
 
@@ -1383,17 +1467,19 @@ function renderProducts(list) {
 
   if (!list.length) {
 
-    noResults.style.display = "block";
+    noResults.style.display =
+      "block";
 
     return;
 
   }
 
 
-  noResults.style.display = "none";
+  noResults.style.display =
+    "none";
 
 
-  list.forEach((perfume, index) => {
+  list.forEach(perfume => {
 
     const card =
       document.createElement("article");
@@ -1402,29 +1488,30 @@ function renderProducts(list) {
       "product-card";
 
 
-    const presentations =
-      getPresentations(perfume);
-
-
     const sizes =
       getSizes(perfume);
 
 
-    let presentationHTML = "";
+    const types =
+      getTypes(perfume);
 
-    presentations.forEach(type => {
 
-      presentationHTML += `
-        <span class="presentation-tag">
-          ${type}
-        </span>
-      `;
+    const sizeText =
+      sizes.length
+        ? sizes
+            .map(size => `${size} ml`)
+            .join(" · ")
+        : "Tamaño por confirmar";
 
-    });
+
+    const typeText =
+      types.length
+        ? types.join(" · ")
+        : "Presentación por confirmar";
 
 
     const message =
-      `Hola, me interesa ${perfume.nombre} de ${perfume.marca}. ¿Me pueden compartir precio y disponibilidad?`;
+      `Hola, me interesa ${cleanValue(perfume.nombre)} de ${cleanValue(perfume.marca)}. ¿Me pueden compartir precio y disponibilidad?`;
 
 
     const whatsappUrl =
@@ -1433,18 +1520,49 @@ function renderProducts(list) {
       }`;
 
 
+    let presentationHTML = "";
+
+
+    types.forEach(type => {
+
+      presentationHTML += `
+
+        <span class="presentation-tag">
+
+          ${escapeHTML(type)}
+
+        </span>
+
+      `;
+
+    });
+
+
     card.innerHTML = `
 
       <div class="product-image">
 
         <div class="gender-badge">
-          ${perfume.genero || "Unisex"}
+
+          ${escapeHTML(
+            perfume.genero || "Unisex"
+          )}
+
         </div>
 
+
         <img
-          src="${perfume.imagen || ""}"
-          alt="${perfume.nombre || "Perfume"}"
+
+          src="${escapeHTML(
+            perfume.imagen || ""
+          )}"
+
+          alt="${escapeHTML(
+            perfume.nombre || "Perfume"
+          )}"
+
           onerror="this.style.opacity='0'"
+
         >
 
       </div>
@@ -1452,31 +1570,32 @@ function renderProducts(list) {
 
       <div class="product-info">
 
+
         <div class="brand">
-          ${perfume.marca || ""}
+
+          ${escapeHTML(
+            perfume.marca || ""
+          )}
+
         </div>
 
 
         <h3 class="product-name">
-          ${perfume.nombre || ""}
+
+          ${escapeHTML(
+            perfume.nombre || ""
+          )}
+
         </h3>
 
 
         <div class="product-details">
 
-          ${
-            presentations.length
-              ? presentations.join(" · ")
-              : "Presentación por confirmar"
-          }
+          ${escapeHTML(typeText)}
 
           <br>
 
-          ${
-            sizes.length
-              ? sizes.map(size => `${size} ml`).join(" · ")
-              : "Tamaño por confirmar"
-          }
+          ${escapeHTML(sizeText)}
 
         </div>
 
@@ -1484,30 +1603,45 @@ function renderProducts(list) {
         ${
           presentationHTML
             ? `
+
               <div class="presentation-list">
+
                 ${presentationHTML}
+
               </div>
+
             `
             : ""
         }
 
 
         <a
+
           href="${whatsappUrl}"
+
           target="_blank"
+
           rel="noopener noreferrer"
+
           class="consult-button"
+
         >
+
           💬 Consultar por WhatsApp
+
         </a>
 
 
         <button
+
           class="details-button"
-          data-index="${index}"
+
         >
+
           Ver detalles
+
         </button>
+
 
       </div>
 
@@ -1515,7 +1649,9 @@ function renderProducts(list) {
 
 
     const detailsButton =
-      card.querySelector(".details-button");
+      card.querySelector(
+        ".details-button"
+      );
 
 
     detailsButton.addEventListener(
@@ -1541,7 +1677,9 @@ function renderProducts(list) {
 
 function filterProducts() {
 
-  if (typeof perfumes === "undefined") {
+  if (
+    typeof perfumes === "undefined"
+  ) {
 
     counter.textContent =
       "No se pudo cargar el catálogo.";
@@ -1578,38 +1716,38 @@ function filterProducts() {
 
 
       const accords =
-        safeArray(perfume.acordes);
+        getAccords(perfume);
 
 
       const notes =
-        safeArray(perfume.notas);
-
-
-      const presentations =
-        getPresentations(perfume);
+        getNotes(perfume);
 
 
       const sizes =
         getSizes(perfume);
 
 
+      const types =
+        getTypes(perfume);
+
+
       const searchable = `
 
-        ${perfume.nombre || ""}
+        ${cleanValue(perfume.nombre)}
 
-        ${perfume.marca || ""}
+        ${cleanValue(perfume.marca)}
 
-        ${perfume.genero || ""}
+        ${cleanValue(perfume.genero)}
 
-        ${perfume.familia || ""}
+        ${cleanValue(perfume.familia)}
 
         ${accords.join(" ")}
 
         ${notes.join(" ")}
 
-        ${presentations.join(" ")}
-
         ${sizes.join(" ")}
+
+        ${types.join(" ")}
 
       `.toLowerCase();
 
@@ -1631,13 +1769,16 @@ function filterProducts() {
 
       const matchesType =
         selectedType === "Todos" ||
-        presentations.includes(selectedType);
+        types.includes(selectedType);
 
 
       const matchesMl =
         selectedMl === "Todos" ||
-        sizes.map(Number).includes(
-          Number(selectedMl)
+        sizes.some(size =>
+          Number(
+            String(size)
+              .replace(/[^\d.]/g, "")
+          ) === Number(selectedMl)
         );
 
 
@@ -1647,12 +1788,19 @@ function filterProducts() {
 
 
       return (
+
         matchesText &&
+
         matchesGender &&
+
         matchesBrand &&
+
         matchesType &&
+
         matchesMl &&
+
         matchesFamily
+
       );
 
     });
@@ -1662,25 +1810,33 @@ function filterProducts() {
      ORDEN
   ========================= */
 
-  if (sortFilter.value === "az") {
+  if (
+    sortFilter.value === "az"
+  ) {
 
-    result.sort((a, b) =>
-      (a.nombre || "")
-        .localeCompare(
-          b.nombre || ""
-        )
+    result.sort(
+      (a, b) =>
+        cleanValue(a.nombre)
+          .localeCompare(
+            cleanValue(b.nombre),
+            "es"
+          )
     );
 
   }
 
 
-  if (sortFilter.value === "za") {
+  if (
+    sortFilter.value === "za"
+  ) {
 
-    result.sort((a, b) =>
-      (b.nombre || "")
-        .localeCompare(
-          a.nombre || ""
-        )
+    result.sort(
+      (a, b) =>
+        cleanValue(b.nombre)
+          .localeCompare(
+            cleanValue(a.nombre),
+            "es"
+          )
     );
 
   }
@@ -1706,11 +1862,15 @@ document
         document
           .querySelectorAll(".category")
           .forEach(btn =>
-            btn.classList.remove("active")
+            btn.classList.remove(
+              "active"
+            )
           );
 
 
-        button.classList.add("active");
+        button.classList.add(
+          "active"
+        );
 
 
         currentGender =
@@ -1761,25 +1921,37 @@ sortFilter.addEventListener(
 
 
 /* =========================================
-   ABRIR MODAL
+   ABRIR PRODUCTO
 ========================================= */
 
 function openProduct(perfume) {
 
-  if (!perfume) return;
+  if (!perfume) {
+    return;
+  }
 
 
-  document.getElementById(
-    "modalImage"
-  ).src =
+  /* =========================
+     IMAGEN
+  ========================= */
+
+  const modalImage =
+    document.getElementById(
+      "modalImage"
+    );
+
+
+  modalImage.src =
     perfume.imagen || "";
 
 
-  document.getElementById(
-    "modalImage"
-  ).alt =
+  modalImage.alt =
     perfume.nombre || "Perfume";
 
+
+  /* =========================
+     INFORMACIÓN PRINCIPAL
+  ========================= */
 
   document.getElementById(
     "modalBrand"
@@ -1800,11 +1972,14 @@ function openProduct(perfume) {
 
 
   /* =========================
-     TAMAÑOS
+     ML
   ========================= */
 
   const modalMl =
-    document.getElementById("modalMl");
+    document.getElementById(
+      "modalMl"
+    );
+
 
   modalMl.innerHTML = "";
 
@@ -1818,7 +1993,9 @@ function openProduct(perfume) {
     sizes.forEach(size => {
 
       modalMl.appendChild(
-        createTag(`${size} ml`)
+        createTag(
+          `${size} ml`
+        )
       );
 
     });
@@ -1826,29 +2003,34 @@ function openProduct(perfume) {
   } else {
 
     modalMl.appendChild(
-      createTag("Por confirmar")
+      createTag(
+        "Por confirmar"
+      )
     );
 
   }
 
 
   /* =========================
-     PRESENTACIONES
+     TIPO
   ========================= */
 
   const modalType =
-    document.getElementById("modalType");
+    document.getElementById(
+      "modalType"
+    );
+
 
   modalType.innerHTML = "";
 
 
-  const presentations =
-    getPresentations(perfume);
+  const types =
+    getTypes(perfume);
 
 
-  if (presentations.length) {
+  if (types.length) {
 
-    presentations.forEach(type => {
+    types.forEach(type => {
 
       modalType.appendChild(
         createTag(type)
@@ -1859,7 +2041,9 @@ function openProduct(perfume) {
   } else {
 
     modalType.appendChild(
-      createTag("Por confirmar")
+      createTag(
+        "Por confirmar"
+      )
     );
 
   }
@@ -1880,23 +2064,24 @@ function openProduct(perfume) {
      ACORDES
   ========================= */
 
-  const accords =
+  const modalAccords =
     document.getElementById(
       "modalAccords"
     );
 
-  accords.innerHTML = "";
+
+  modalAccords.innerHTML = "";
 
 
-  const accordList =
-    safeArray(perfume.acordes);
+  const accords =
+    getAccords(perfume);
 
 
-  if (accordList.length) {
+  if (accords.length) {
 
-    accordList.forEach(acorde => {
+    accords.forEach(acorde => {
 
-      accords.appendChild(
+      modalAccords.appendChild(
         createTag(acorde)
       );
 
@@ -1904,8 +2089,10 @@ function openProduct(perfume) {
 
   } else {
 
-    accords.appendChild(
-      createTag("Por confirmar")
+    modalAccords.appendChild(
+      createTag(
+        "Por confirmar"
+      )
     );
 
   }
@@ -1915,23 +2102,24 @@ function openProduct(perfume) {
      NOTAS
   ========================= */
 
-  const notes =
+  const modalNotes =
     document.getElementById(
       "modalNotes"
     );
 
-  notes.innerHTML = "";
+
+  modalNotes.innerHTML = "";
 
 
-  const noteList =
-    safeArray(perfume.notas);
+  const notes =
+    getNotes(perfume);
 
 
-  if (noteList.length) {
+  if (notes.length) {
 
-    noteList.forEach(nota => {
+    notes.forEach(nota => {
 
-      notes.appendChild(
+      modalNotes.appendChild(
         createTag(nota)
       );
 
@@ -1939,8 +2127,10 @@ function openProduct(perfume) {
 
   } else {
 
-    notes.appendChild(
-      createTag("Por confirmar")
+    modalNotes.appendChild(
+      createTag(
+        "Por confirmar"
+      )
     );
 
   }
@@ -1951,7 +2141,7 @@ function openProduct(perfume) {
   ========================= */
 
   const message =
-    `Hola, me interesa ${perfume.nombre} de ${perfume.marca}. ¿Me pueden compartir precio y disponibilidad?`;
+    `Hola, me interesa ${cleanValue(perfume.nombre)} de ${cleanValue(perfume.marca)}. ¿Me pueden compartir precio y disponibilidad?`;
 
 
   document.getElementById(
@@ -1962,7 +2152,13 @@ function openProduct(perfume) {
     }`;
 
 
-  modal.classList.add("active");
+  /* =========================
+     MOSTRAR MODAL
+  ========================= */
+
+  modal.classList.add(
+    "active"
+  );
 
 }
 
@@ -1975,7 +2171,9 @@ closeModal.addEventListener(
   "click",
   () => {
 
-    modal.classList.remove("active");
+    modal.classList.remove(
+      "active"
+    );
 
   }
 );
@@ -1985,9 +2183,13 @@ modal.addEventListener(
   "click",
   event => {
 
-    if (event.target === modal) {
+    if (
+      event.target === modal
+    ) {
 
-      modal.classList.remove("active");
+      modal.classList.remove(
+        "active"
+      );
 
     }
 
@@ -1996,7 +2198,7 @@ modal.addEventListener(
 
 
 /* =========================================
-   ESC PARA CERRAR
+   ESC
 ========================================= */
 
 document.addEventListener(
@@ -2021,11 +2223,13 @@ document.addEventListener(
    INICIAR
 ========================================= */
 
-if (typeof perfumes !== "undefined") {
+if (
+  typeof perfumes !== "undefined"
+) {
 
   loadFilters();
 
-  renderProducts(perfumes);
+  filterProducts();
 
 } else {
 
@@ -2041,4 +2245,5 @@ if (typeof perfumes !== "undefined") {
 </script>
 
 </body>
+
 </html>
