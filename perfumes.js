@@ -154,15 +154,20 @@ const perfumes = [
   // ============================
 
   {
-    nombre: "Eros Parfum",
+    nombre: "Eros",
     marca: "Versace",
     ml: null,
     genero: "Hombre",
-    tipo: "Parfum",
+    tipo: "Eau de Toilette / Eau de Parfum / Parfum",
+    presentaciones: [
+      "Eau de Toilette",
+      "Eau de Parfum",
+      "Parfum"
+    ],
     familia: "",
     acordes: [],
     notas: [],
-    imagen: "imagenes/versace-eros-parfum.jpg"
+    imagen: "imagenes/versace-eros.jpg"
   },
 
   {
@@ -175,30 +180,6 @@ const perfumes = [
     acordes: [],
     notas: [],
     imagen: "imagenes/versace-eros-flame.jpg"
-  },
-
-  {
-    nombre: "Eros",
-    marca: "Versace",
-    ml: null,
-    genero: "Hombre",
-    tipo: "Eau de Parfum",
-    familia: "",
-    acordes: [],
-    notas: [],
-    imagen: "imagenes/versace-eros-edp.jpg"
-  },
-
-  {
-    nombre: "Eros",
-    marca: "Versace",
-    ml: null,
-    genero: "Hombre",
-    tipo: "Eau de Toilette",
-    familia: "",
-    acordes: [],
-    notas: [],
-    imagen: "imagenes/versace-eros-edt.jpg"
   },
 
   {
