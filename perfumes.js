@@ -642,15 +642,19 @@ const perfumes = [
   // ============================
 
   {
-    nombre: "Sauvage Parfum",
+    nombre: "Sauvage",
     marca: "Dior",
     ml: null,
     genero: "Hombre",
-    tipo: "Parfum",
+    tipo: "Eau de Parfum / Parfum",
+    presentaciones: [
+      "Eau de Parfum",
+      "Parfum"
+    ],
     familia: "",
     acordes: [],
     notas: [],
-    imagen: "imagenes/dior-sauvage-parfum.jpg"
+    imagen: "imagenes/dior-sauvage.jpg"
   },
 
   {
@@ -666,18 +670,6 @@ const perfumes = [
   },
 
   {
-    nombre: "Sauvage",
-    marca: "Dior",
-    ml: null,
-    genero: "Hombre",
-    tipo: "Eau de Parfum",
-    familia: "",
-    acordes: [],
-    notas: [],
-    imagen: "imagenes/dior-sauvage-edp.jpg"
-  },
-
-  {
     nombre: "Sauvage Eau Forte",
     marca: "Dior",
     ml: null,
@@ -687,18 +679,6 @@ const perfumes = [
     acordes: [],
     notas: [],
     imagen: "imagenes/dior-sauvage-eau-forte.jpg"
-  },
-
-  {
-    nombre: "Sauvage",
-    marca: "Dior",
-    ml: null,
-    genero: "Hombre",
-    tipo: "Eau de Toilette",
-    familia: "",
-    acordes: [],
-    notas: [],
-    imagen: "imagenes/dior-sauvage-edt.jpg"
   },
 
 
