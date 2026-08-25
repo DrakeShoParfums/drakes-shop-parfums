@@ -1,1190 +1,1100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Drakes Shop Parfums</title>
-
-  <meta
-    name="description"
-    content="Drakes Shop Parfums - Catálogo de perfumes y fragancias."
-  >
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --black: #111111;
-      --black-soft: #1c1c1c;
-      --cream: #f7f4ee;
-      --white: #ffffff;
-      --gold: #b9975b;
-      --gold-light: #d9c18b;
-      --gray: #777777;
-      --border: #e5e0d7;
-      --whatsapp: #25d366;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
-      color: var(--black);
-      line-height: 1.5;
-    }
-
-    /* ================================
-       HEADER
-    ================================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: var(--black);
-      color: white;
-      box-shadow: 0 4px 25px rgba(0,0,0,.18);
-    }
-
-    .header-inner {
-      max-width: 1250px;
-      margin: auto;
-      padding: 18px 25px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 24px;
-      letter-spacing: 2px;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: var(--gold-light);
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      transition: .2s;
-    }
-
-    nav a:hover {
-      color: var(--gold-light);
-    }
-
-    /* ================================
-       HERO
-    ================================= */
-
-    .hero {
-      background:
-        linear-gradient(
-          rgba(10,10,10,.72),
-          rgba(10,10,10,.84)
-        ),
-        linear-gradient(
-          120deg,
-          #333333,
-          #080808
-        );
-
-      color: white;
-      text-align: center;
-
-      padding: 85px 20px 95px;
-    }
-
-    .hero-label {
-      color: var(--gold-light);
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      font-size: 11px;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-family: Georgia, serif;
-      font-weight: normal;
-      font-size: clamp(40px, 7vw, 70px);
-      margin-bottom: 18px;
-    }
-
-    .hero p {
-      max-width: 680px;
-      margin: auto;
-      color: #dddddd;
-      font-size: 16px;
-    }
-
-    /* ================================
-       SEARCH
-    ================================= */
-
-    .search-container {
-      max-width: 900px;
-      margin: -35px auto 0;
-      padding: 0 20px;
-      position: relative;
-      z-index: 10;
-    }
-
-    .search-box {
-      background: white;
-      border-radius: 14px;
-      padding: 8px;
-
-      display: flex;
-      align-items: center;
-
-      box-shadow: 0 18px 45px rgba(0,0,0,.17);
-    }
-
-    .search-icon {
-      width: 55px;
-      text-align: center;
-      font-size: 24px;
-      color: #555;
-    }
-
-    .search-box input {
-      flex: 1;
-      border: none;
-      outline: none;
-
-      padding: 18px 10px;
-
-      font-size: 16px;
-      background: transparent;
-    }
-
-    /* ================================
-       CATEGORIES
-    ================================= */
-
-    .categories {
-      max-width: 1200px;
-      margin: 45px auto 20px;
-      padding: 0 20px;
-
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .category {
-      border: 1px solid var(--border);
-      background: white;
-
-      padding: 11px 20px;
-
-      border-radius: 30px;
-
-      cursor: pointer;
-
-      font-size: 14px;
-
-      transition: .2s;
-    }
-
-    .category:hover,
-    .category.active {
-      background: var(--black);
-      border-color: var(--black);
-      color: white;
-    }
-
-    /* ================================
-       MAIN
-    ================================= */
-
-    main {
-      max-width: 1250px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-
-      margin: 35px 0 20px;
-
-      gap: 20px;
-    }
-
-    .section-heading h2 {
-      font-family: Georgia, serif;
-      font-weight: normal;
-      font-size: 32px;
-    }
-
-    .section-heading p {
-      color: var(--gray);
-      font-size: 13px;
-    }
-
-    /* ================================
-       FILTERS
-    ================================= */
-
-    .filters {
-      background: white;
-
-      border: 1px solid var(--border);
-
-      border-radius: 12px;
-
-      padding: 18px;
-
-      margin-bottom: 25px;
-
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 12px;
-    }
-
-    .filters select {
-      min-width: 170px;
-
-      padding: 12px 14px;
-
-      border: 1px solid var(--border);
-
-      border-radius: 8px;
-
-      background: white;
-
-      outline: none;
-
-      cursor: pointer;
-    }
-
-    /* ================================
-       PRODUCT GRID
-    ================================= */
-
-    .products {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 20px;
-    }
-
-    .product-card {
-      background: white;
-
-      border: 1px solid var(--border);
-
-      border-radius: 12px;
-
-      overflow: hidden;
-
-      transition:
-        transform .25s,
-        box-shadow .25s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-
-      box-shadow:
-        0 15px 35px rgba(0,0,0,.1);
-    }
-
-    .product-image {
-      height: 285px;
-
-      background:
-        radial-gradient(
-          circle at center,
-          #ffffff 0%,
-          #eeeae2 55%,
-          #d8d2c7 100%
-        );
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: contain;
-
-      padding: 20px;
-
-      transition: transform .3s;
-    }
-
-    .product-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .gender-badge {
-      position: absolute;
-
-      left: 12px;
-      top: 12px;
-
-      background: var(--black);
-      color: white;
-
-      padding: 6px 9px;
-
-      border-radius: 20px;
-
-      font-size: 10px;
-
-      z-index: 2;
-    }
-
-    .product-info {
-      padding: 17px;
-    }
-
-    .brand {
-      color: var(--gold);
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.5px;
-
-      font-weight: bold;
-
-      font-size: 11px;
-
-      margin-bottom: 6px;
-    }
-
-    .product-name {
-      font-family: Georgia, serif;
-
-      font-weight: normal;
-
-      font-size: 19px;
-
-      margin-bottom: 8px;
-    }
-
-    .product-details {
-      color: var(--gray);
-
-      font-size: 12px;
-
-      margin-bottom: 15px;
-    }
-
-    .consult-button {
-      width: 100%;
-
-      border: none;
-
-      background: var(--whatsapp);
-
-      color: white;
-
-      text-decoration: none;
-
-      padding: 12px;
-
-      border-radius: 8px;
-
-      display: block;
-
-      text-align: center;
-
-      font-weight: bold;
-
-      font-size: 13px;
-
-      cursor: pointer;
-
-      transition: .2s;
-    }
-
-    .consult-button:hover {
-      background: #1db954;
-    }
-
-    .details-button {
-      width: 100%;
-
-      margin-top: 8px;
-
-      padding: 10px;
-
-      border: 1px solid var(--black);
-
-      background: white;
-
-      border-radius: 8px;
-
-      cursor: pointer;
-
-      font-size: 13px;
-    }
-
-    .details-button:hover {
-      background: var(--black);
-      color: white;
-    }
-
-    /* ================================
-       NO RESULTS
-    ================================= */
-
-    .no-results {
-      display: none;
-
-      text-align: center;
-
-      padding: 80px 20px;
-    }
-
-    .no-results h3 {
-      font-family: Georgia, serif;
-
-      font-size: 30px;
-
-      margin-bottom: 8px;
-    }
-
-    .no-results p {
-      color: var(--gray);
-    }
-
-    /* ================================
-       MODAL
-    ================================= */
-
-    .modal {
-      position: fixed;
-
-      inset: 0;
-
-      background:
-        rgba(0,0,0,.75);
-
-      display: none;
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 20px;
-
-      z-index: 2000;
-
-      overflow-y: auto;
-    }
-
-    .modal.active {
-      display: flex;
-    }
-
-    .modal-box {
-      max-width: 900px;
-
-      width: 100%;
-
-      background: white;
-
-      border-radius: 15px;
-
-      overflow: hidden;
-
-      position: relative;
-    }
-
-    .close-modal {
-      position: absolute;
-
-      top: 15px;
-      right: 15px;
-
-      width: 40px;
-      height: 40px;
-
-      border: none;
-
-      background: white;
-
-      border-radius: 50%;
-
-      font-size: 25px;
-
-      cursor: pointer;
-
-      z-index: 5;
-
-      box-shadow:
-        0 3px 15px rgba(0,0,0,.15);
-    }
-
-    .modal-grid {
-      display: grid;
-
-      grid-template-columns:
-        45% 55%;
-    }
-
-    .modal-image {
-      min-height: 500px;
-
-      background:
-        radial-gradient(
-          circle,
-          #ffffff,
-          #e7e1d6
-        );
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-image img {
-      width: 100%;
-      height: 100%;
-
-      max-height: 560px;
-
-      object-fit: contain;
-
-      padding: 40px;
-    }
-
-    .modal-info {
-      padding: 55px 40px;
-    }
-
-    .modal-info h2 {
-      font-family: Georgia, serif;
-
-      font-size: 38px;
-
-      font-weight: normal;
-
-      margin: 8px 0 20px;
-    }
-
-    .info-row {
-      padding: 13px 0;
-
-      border-bottom:
-        1px solid #eeeeee;
-
-      font-size: 14px;
-    }
-
-    .info-row strong {
-      display: inline-block;
-
-      width: 120px;
-    }
-
-    .tags {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 7px;
-
-      margin-top: 9px;
-    }
-
-    .tag {
-      background: #f2eee6;
-
-      padding: 7px 10px;
-
-      border-radius: 20px;
-
-      font-size: 12px;
-    }
-
-    .modal-whatsapp {
-      display: block;
-
-      margin-top: 25px;
-
-      padding: 14px;
-
-      background: var(--whatsapp);
-
-      color: white;
-
-      text-align: center;
-
-      text-decoration: none;
-
-      border-radius: 8px;
-
-      font-weight: bold;
-    }
-
-    /* ================================
-       FOOTER
-    ================================= */
-
-    footer {
-      margin-top: 70px;
-
-      background: var(--black);
-
-      color: white;
-
-      text-align: center;
-
-      padding: 45px 20px;
-    }
-
-    .footer-logo {
-      font-family: Georgia, serif;
-
-      font-size: 24px;
-
-      letter-spacing: 2px;
-    }
-
-    .footer-logo span {
-      color: var(--gold-light);
-    }
-
-    footer p {
-      margin-top: 9px;
-
-      color: #999;
-
-      font-size: 13px;
-    }
-
-    /* ================================
-       RESPONSIVE
-    ================================= */
-
-    @media (max-width: 1050px) {
-
-      .products {
-        grid-template-columns:
-          repeat(3, 1fr);
-      }
-
-    }
-
-    @media (max-width: 750px) {
-
-      nav {
-        display: none;
-      }
-
-      .header-inner {
-        padding: 15px;
-      }
-
-      .logo {
-        font-size: 19px;
-      }
-
-      .hero {
-        padding: 65px 20px 80px;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .products {
-        grid-template-columns:
-          repeat(2, 1fr);
-
-        gap: 12px;
-      }
-
-      .product-image {
-        height: 220px;
-      }
-
-      .product-info {
-        padding: 13px;
-      }
-
-      .product-name {
-        font-size: 16px;
-      }
-
-      .filters {
-        display: grid;
-
-        grid-template-columns:
-          1fr 1fr;
-      }
-
-      .filters select {
-        min-width: 0;
-        width: 100%;
-      }
-
-      .modal-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .modal-image {
-        min-height: 300px;
-        max-height: 350px;
-      }
-
-      .modal-info {
-        padding: 30px 25px;
-      }
-
-      .modal-info h2 {
-        font-size: 29px;
-      }
-
-    }
-
-    @media (max-width: 450px) {
-
-      .products {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .product-image {
-        height: 180px;
-      }
-
-      .hero h1 {
-        font-size: 35px;
-      }
-
-      .filters {
-        grid-template-columns: 1fr;
-      }
-
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Drakes Shop Parfums</title>
+
+<meta name="description" content="Drakes Shop Parfums - Catálogo de perfumes y fragancias.">
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #111111;
+  --black-soft: #1c1c1c;
+  --cream: #f7f4ee;
+  --white: #ffffff;
+  --gold: #b9975b;
+  --gold-light: #d9c18b;
+  --gray: #777777;
+  --border: #e5e0d7;
+  --whatsapp: #25d366;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--black);
+  line-height: 1.5;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--black);
+  color: white;
+  box-shadow: 0 4px 25px rgba(0,0,0,.18);
+}
+
+.header-inner {
+  max-width: 1250px;
+  margin: auto;
+  padding: 18px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--gold-light);
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: .2s;
+}
+
+nav a:hover {
+  color: var(--gold-light);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background:
+    linear-gradient(
+      rgba(10,10,10,.72),
+      rgba(10,10,10,.84)
+    ),
+    linear-gradient(
+      120deg,
+      #333333,
+      #080808
+    );
+
+  color: white;
+  text-align: center;
+  padding: 85px 20px 95px;
+}
+
+.hero-label {
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 11px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: clamp(40px, 7vw, 70px);
+  margin-bottom: 18px;
+}
+
+.hero p {
+  max-width: 680px;
+  margin: auto;
+  color: #dddddd;
+  font-size: 16px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-container {
+  max-width: 900px;
+  margin: -35px auto 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.search-box {
+  background: white;
+  border-radius: 14px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 18px 45px rgba(0,0,0,.17);
+}
+
+.search-icon {
+  width: 55px;
+  text-align: center;
+  font-size: 24px;
+  color: #555;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 18px 10px;
+  font-size: 16px;
+  background: transparent;
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+  max-width: 1200px;
+  margin: 45px auto 20px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.category {
+  border: 1px solid var(--border);
+  background: white;
+  padding: 11px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: .2s;
+}
+
+.category:hover,
+.category.active {
+  background: var(--black);
+  border-color: var(--black);
+  color: white;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 35px 0 20px;
+  gap: 20px;
+}
+
+.section-heading h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 32px;
+}
+
+.section-heading p {
+  color: var(--gray);
+  font-size: 13px;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filters select {
+  min-width: 170px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  outline: none;
+  cursor: pointer;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform .25s,
+    box-shadow .25s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.1);
+}
+
+.product-image {
+  height: 285px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #ffffff 0%,
+      #eeeae2 55%,
+      #d8d2c7 100%
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+  transition: transform .3s;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.gender-badge {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+
+  background: var(--black);
+  color: white;
+
+  padding: 6px 9px;
+  border-radius: 20px;
+
+  font-size: 10px;
+  z-index: 2;
+}
+
+.product-info {
+  padding: 17px;
+}
+
+.brand {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.product-name {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.product-details {
+  color: var(--gray);
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   PRESENTACIONES
+========================= */
+
+.presentation-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.presentation-tag {
+  background: #f2eee6;
+  color: #555;
+  padding: 4px 7px;
+  border-radius: 12px;
+  font-size: 10px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.consult-button {
+  width: 100%;
+  border: none;
+  background: var(--whatsapp);
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.consult-button:hover {
+  background: #1db954;
+}
+
+.details-button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid var(--black);
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.details-button:hover {
+  background: var(--black);
+  color: white;
+}
+
+/* =========================
+   NO RESULTS
+========================= */
+
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.no-results h3 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.no-results p {
+  color: var(--gray);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 2000;
+
+  overflow-y: auto;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-box {
+  max-width: 900px;
+  width: 100%;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background: white;
+
+  border-radius: 50%;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  box-shadow:
+    0 3px 15px rgba(0,0,0,.15);
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+}
+
+.modal-image {
+  min-height: 500px;
+
+  background:
+    radial-gradient(
+      circle,
+      #ffffff,
+      #e7e1d6
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 560px;
+  object-fit: contain;
+  padding: 40px;
+}
+
+.modal-info {
+  padding: 55px 40px;
+}
+
+.modal-info h2 {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: normal;
+  margin: 8px 0 20px;
+}
+
+.info-row {
+  padding: 13px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 14px;
+}
+
+.info-row strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 9px;
+}
+
+.tag {
+  background: #f2eee6;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.modal-whatsapp {
+  display: block;
+  margin-top: 25px;
+  padding: 14px;
+  background: var(--whatsapp);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  margin-top: 70px;
+  background: var(--black);
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.footer-logo {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.footer-logo span {
+  color: var(--gold-light);
+}
+
+footer p {
+  margin-top: 9px;
+  color: #999;
+  font-size: 13px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1050px) {
+
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 750px) {
+
+  nav {
+    display: none;
+  }
+
+  .header-inner {
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .hero {
+    padding: 65px 20px 80px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-image {
+    height: 220px;
+  }
+
+  .product-info {
+    padding: 13px;
+  }
+
+  .product-name {
+    font-size: 16px;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filters select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-image {
+    min-height: 300px;
+    max-height: 350px;
+  }
+
+  .modal-info {
+    padding: 30px 25px;
+  }
+
+  .modal-info h2 {
+    font-size: 29px;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-image {
+    height: 180px;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
 </head>
-
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
 
-  <!-- HEADER -->
+<header>
 
-  <header>
+  <div class="header-inner">
 
-    <div class="header-inner">
-
-      <div class="logo">
-        DRAKES <span>SHOP PARFUMS</span>
-      </div>
-
-      <nav>
-
-        <a href="#inicio">
-          Inicio
-        </a>
-
-        <a href="#catalogo">
-          Perfumes
-        </a>
-
-        <a href="#contacto">
-          Contacto
-        </a>
-
-      </nav>
-
+    <div class="logo">
+      DRAKES <span>SHOP PARFUMS</span>
     </div>
 
-  </header>
+    <nav>
 
+      <a href="#inicio">
+        Inicio
+      </a>
 
-  <!-- HERO -->
+      <a href="#catalogo">
+        Perfumes
+      </a>
 
-  <section class="hero" id="inicio">
+      <a href="#contacto">
+        Contacto
+      </a>
 
-    <div class="hero-label">
-      Drakes Shop Parfums
-    </div>
-
-    <h1>
-      Encuentra tu esencia
-    </h1>
-
-    <p>
-      Explora nuestra selección de fragancias y descubre
-      el perfume que representa tu estilo y personalidad.
-    </p>
-
-  </section>
-
-
-  <!-- SEARCH -->
-
-  <div class="search-container">
-
-    <div class="search-box">
-
-      <div class="search-icon">
-        🔎
-      </div>
-
-      <input
-        id="search"
-        type="text"
-        placeholder="Buscar perfume, marca, nota o acorde..."
-        autocomplete="off"
-      >
-
-    </div>
+    </nav>
 
   </div>
 
+</header>
 
-  <!-- CATEGORIES -->
 
-  <div class="categories">
+<!-- =========================
+     HERO
+========================= -->
 
-    <button
-      class="category active"
-      data-gender="Todos"
+<section class="hero" id="inicio">
+
+  <div class="hero-label">
+    Drakes Shop Parfums
+  </div>
+
+  <h1>
+    Encuentra tu esencia
+  </h1>
+
+  <p>
+    Explora nuestra selección de fragancias y descubre
+    el perfume que representa tu estilo y personalidad.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<div class="search-container">
+
+  <div class="search-box">
+
+    <div class="search-icon">
+      🔎
+    </div>
+
+    <input
+      id="search"
+      type="text"
+      placeholder="Buscar perfume, marca, nota o acorde..."
+      autocomplete="off"
     >
-      Todos
-    </button>
-
-    <button
-      class="category"
-      data-gender="Hombre"
-    >
-      Hombre
-    </button>
-
-    <button
-      class="category"
-      data-gender="Mujer"
-    >
-      Mujer
-    </button>
-
-    <button
-      class="category"
-      data-gender="Unisex"
-    >
-      Unisex
-    </button>
 
   </div>
 
-
-  <!-- MAIN -->
-
-  <main id="catalogo">
-
-    <div class="section-heading">
-
-      <div>
-
-        <h2>
-          Catálogo de perfumes
-        </h2>
-
-        <p id="counter">
-          Cargando perfumes...
-        </p>
-
-      </div>
-
-    </div>
+</div>
 
 
-    <!-- FILTERS -->
+<!-- =========================
+     CATEGORIES
+========================= -->
 
-    <div class="filters">
+<div class="categories">
 
-      <select id="brandFilter">
+  <button
+    class="category active"
+    data-gender="Todos"
+  >
+    Todos
+  </button>
 
-        <option value="Todos">
-          Todas las marcas
-        </option>
+  <button
+    class="category"
+    data-gender="Hombre"
+  >
+    Hombre
+  </button>
 
-      </select>
+  <button
+    class="category"
+    data-gender="Mujer"
+  >
+    Mujer
+  </button>
 
+  <button
+    class="category"
+    data-gender="Unisex"
+  >
+    Unisex
+  </button>
 
-      <select id="typeFilter">
-
-        <option value="Todos">
-          Todas las concentraciones
-        </option>
-
-        <option value="Eau de Parfum">
-          Eau de Parfum
-        </option>
-
-        <option value="Eau de Toilette">
-          Eau de Toilette
-        </option>
-
-        <option value="Parfum">
-          Parfum
-        </option>
-
-        <option value="Extrait">
-          Extrait
-        </option>
-
-      </select>
-
-
-      <select id="mlFilter">
-
-        <option value="Todos">
-          Todos los tamaños
-        </option>
-
-        <option value="30">
-          30 ml
-        </option>
-
-        <option value="50">
-          50 ml
-        </option>
-
-        <option value="75">
-          75 ml
-        </option>
-
-        <option value="80">
-          80 ml
-        </option>
-
-        <option value="100">
-          100 ml
-        </option>
-
-        <option value="125">
-          125 ml
-        </option>
-
-        <option value="150">
-          150 ml
-        </option>
-
-        <option value="200">
-          200 ml
-        </option>
-
-      </select>
+</div>
 
 
-      <select id="familyFilter">
+<!-- =========================
+     MAIN
+========================= -->
 
-        <option value="Todos">
-          Todas las familias
-        </option>
+<main id="catalogo">
 
-      </select>
+  <div class="section-heading">
 
+    <div>
 
-      <select id="sortFilter">
+      <h2>
+        Catálogo de perfumes
+      </h2>
 
-        <option value="az">
-          Nombre A-Z
-        </option>
-
-        <option value="za">
-          Nombre Z-A
-        </option>
-
-      </select>
-
-    </div>
-
-
-    <!-- PRODUCTS -->
-
-    <div
-      class="products"
-      id="products"
-    ></div>
-
-
-    <!-- NO RESULTS -->
-
-    <div
-      class="no-results"
-      id="noResults"
-    >
-
-      <h3>
-        No encontramos ese perfume
-      </h3>
-
-      <p>
-        Intenta buscar con otro nombre, marca o nota.
+      <p id="counter">
+        Cargando perfumes...
       </p>
 
     </div>
 
-  </main>
+  </div>
 
 
-  <!-- MODAL -->
+  <!-- FILTERS -->
+
+  <div class="filters">
+
+    <select id="brandFilter">
+
+      <option value="Todos">
+        Todas las marcas
+      </option>
+
+    </select>
+
+
+    <select id="typeFilter">
+
+      <option value="Todos">
+        Todas las concentraciones
+      </option>
+
+      <option value="Eau de Parfum">
+        Eau de Parfum
+      </option>
+
+      <option value="Eau de Toilette">
+        Eau de Toilette
+      </option>
+
+      <option value="Parfum">
+        Parfum
+      </option>
+
+      <option value="Extrait">
+        Extrait
+      </option>
+
+    </select>
+
+
+    <select id="mlFilter">
+
+      <option value="Todos">
+        Todos los tamaños
+      </option>
+
+      <option value="30">
+        30 ml
+      </option>
+
+      <option value="50">
+        50 ml
+      </option>
+
+      <option value="75">
+        75 ml
+      </option>
+
+      <option value="80">
+        80 ml
+      </option>
+
+      <option value="100">
+        100 ml
+      </option>
+
+      <option value="125">
+        125 ml
+      </option>
+
+      <option value="150">
+        150 ml
+      </option>
+
+      <option value="200">
+        200 ml
+      </option>
+
+    </select>
+
+
+    <select id="familyFilter">
+
+      <option value="Todos">
+        Todas las familias
+      </option>
+
+    </select>
+
+
+    <select id="sortFilter">
+
+      <option value="az">
+        Nombre A-Z
+      </option>
+
+      <option value="za">
+        Nombre Z-A
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <!-- PRODUCTS -->
 
   <div
-    class="modal"
-    id="modal"
+    class="products"
+    id="products"
+  ></div>
+
+
+  <!-- NO RESULTS -->
+
+  <div
+    class="no-results"
+    id="noResults"
   >
 
-    <div class="modal-box">
+    <h3>
+      No encontramos ese perfume
+    </h3>
 
-      <button
-        class="close-modal"
-        id="closeModal"
-      >
-        ×
-      </button>
+    <p>
+      Intenta buscar con otro nombre, marca o nota.
+    </p>
+
+  </div>
+
+</main>
 
 
-      <div class="modal-grid">
+<!-- =========================
+     MODAL
+========================= -->
+
+<div
+  class="modal"
+  id="modal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close-modal"
+      id="closeModal"
+    >
+      ×
+    </button>
 
 
-        <div class="modal-image">
+    <div class="modal-grid">
 
-          <img
-            id="modalImage"
-            src=""
-            alt=""
-          >
+
+      <div class="modal-image">
+
+        <img
+          id="modalImage"
+          src=""
+          alt=""
+        >
+
+      </div>
+
+
+      <div class="modal-info">
+
+        <div
+          class="brand"
+          id="modalBrand"
+        ></div>
+
+
+        <h2
+          id="modalName"
+        ></h2>
+
+
+        <div class="info-row">
+
+          <strong>
+            Género
+          </strong>
+
+          <span id="modalGender"></span>
 
         </div>
 
 
-        <div class="modal-info">
+        <div class="info-row">
+
+          <strong>
+            Tamaños disponibles
+          </strong>
 
           <div
-            class="brand"
-            id="modalBrand"
+            class="tags"
+            id="modalMl"
           ></div>
 
-
-          <h2
-            id="modalName"
-          ></h2>
+        </div>
 
 
-          <div class="info-row">
+        <div class="info-row">
 
-            <strong>
-              Género
-            </strong>
+          <strong>
+            Presentaciones
+          </strong>
 
-            <span id="modalGender"></span>
-
-          </div>
-
-
-          <div class="info-row">
-
-            <strong>
-              Tamaño
-            </strong>
-
-            <span id="modalMl"></span>
-
-          </div>
-
-
-          <div class="info-row">
-
-            <strong>
-              Concentración
-            </strong>
-
-            <span id="modalType"></span>
-
-          </div>
-
-
-          <div class="info-row">
-
-            <strong>
-              Familia
-            </strong>
-
-            <span id="modalFamily"></span>
-
-          </div>
-
-
-          <div class="info-row">
-
-            <strong>
-              Acordes
-            </strong>
-
-            <div
-              class="tags"
-              id="modalAccords"
-            ></div>
-
-          </div>
-
-
-          <div class="info-row">
-
-            <strong>
-              Notas
-            </strong>
-
-            <div
-              class="tags"
-              id="modalNotes"
-            ></div>
-
-          </div>
-
-
-          <a
-            id="modalWhatsapp"
-            class="modal-whatsapp"
-            target="_blank"
-            href="#"
-          >
-            💬 Consultar por WhatsApp
-          </a>
+          <div
+            class="tags"
+            id="modalType"
+          ></div>
 
         </div>
+
+
+        <div class="info-row">
+
+          <strong>
+            Familia olfativa
+          </strong>
+
+          <span id="modalFamily"></span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <strong>
+            Acordes
+          </strong>
+
+          <div
+            class="tags"
+            id="modalAccords"
+          ></div>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <strong>
+            Notas
+          </strong>
+
+          <div
+            class="tags"
+            id="modalNotes"
+          ></div>
+
+        </div>
+
+
+        <a
+          id="modalWhatsapp"
+          class="modal-whatsapp"
+          target="_blank"
+          href="#"
+        >
+          💬 Consultar por WhatsApp
+        </a>
 
       </div>
 
@@ -1192,743 +1102,943 @@
 
   </div>
 
+</div>
 
-  <!-- FOOTER -->
 
-  <footer id="contacto">
+<!-- =========================
+     FOOTER
+========================= -->
 
-    <div class="footer-logo">
-      DRAKES <span>SHOP PARFUMS</span>
-    </div>
+<footer id="contacto">
 
-    <p>
-      Descubre tu aroma. Encuentra tu esencia.
-    </p>
+  <div class="footer-logo">
+    DRAKES <span>SHOP PARFUMS</span>
+  </div>
 
-    <p>
-      © 2026 Drakes Shop Parfums
-    </p>
+  <p>
+    Descubre tu aroma. Encuentra tu esencia.
+  </p>
 
-  </footer>
+  <p>
+    © 2026 Drakes Shop Parfums
+  </p>
 
+</footer>
 
-  <!-- =====================================================
-       MUY IMPORTANTE:
-       CARGAMOS PRIMERO TU CATÁLOGO
-  ====================================================== -->
 
-  <script src="perfumes.js"></script>
+<!-- =========================
+     CATÁLOGO
+========================= -->
 
+<script src="perfumes.js"></script>
 
-  <!-- =====================================================
-       FUNCIONAMIENTO DE LA PÁGINA
-  ====================================================== -->
 
-  <script>
+<script>
 
-    /*
-    ==========================================================
-    CONFIGURA AQUÍ TU WHATSAPP
-    ==========================================================
+/* =========================================
+   WHATSAPP
+========================================= */
 
-    POR AHORA DEJAMOS UN NÚMERO DE PRUEBA.
+const WHATSAPP = "522223638352";
 
-    Después pondremos tu número real.
-    ==========================================================
-    */
 
-    const WHATSAPP =
-      "5210000000000";
+/* =========================================
+   ELEMENTOS
+========================================= */
 
+const products =
+  document.getElementById("products");
 
-    /*
-    ==========================================================
-    ELEMENTOS
-    ==========================================================
-    */
+const search =
+  document.getElementById("search");
 
-    const products =
-      document.getElementById("products");
+const counter =
+  document.getElementById("counter");
 
-    const search =
-      document.getElementById("search");
+const noResults =
+  document.getElementById("noResults");
 
-    const counter =
-      document.getElementById("counter");
+const brandFilter =
+  document.getElementById("brandFilter");
 
-    const noResults =
-      document.getElementById("noResults");
+const typeFilter =
+  document.getElementById("typeFilter");
 
-    const brandFilter =
-      document.getElementById("brandFilter");
+const mlFilter =
+  document.getElementById("mlFilter");
 
-    const typeFilter =
-      document.getElementById("typeFilter");
+const familyFilter =
+  document.getElementById("familyFilter");
 
-    const mlFilter =
-      document.getElementById("mlFilter");
+const sortFilter =
+  document.getElementById("sortFilter");
 
-    const familyFilter =
-      document.getElementById("familyFilter");
+const modal =
+  document.getElementById("modal");
 
-    const sortFilter =
-      document.getElementById("sortFilter");
+const closeModal =
+  document.getElementById("closeModal");
 
-    const modal =
-      document.getElementById("modal");
 
-    const closeModal =
-      document.getElementById("closeModal");
+let currentGender = "Todos";
 
 
-    let currentGender = "Todos";
+/* =========================================
+   SEGURIDAD PARA DATOS VACÍOS
+========================================= */
 
+function safeArray(value) {
 
-    /*
-    ==========================================================
-    COMPROBAR CATÁLOGO
-    ==========================================================
-    */
+  if (Array.isArray(value)) {
+    return value;
+  }
 
-    if (
-      typeof perfumes === "undefined"
-    ) {
+  if (value === null || value === undefined) {
+    return [];
+  }
 
-      counter.textContent =
-        "No se pudo cargar el catálogo.";
+  return [value];
 
-      console.error(
-        "No se encontró perfumes.js"
-      );
+}
 
-    }
 
+/* =========================================
+   TEXTO DE PRESENTACIONES
+========================================= */
 
-    /*
-    ==========================================================
-    CREAR FILTROS DE MARCAS
-    ==========================================================
-    */
+function getPresentations(perfume) {
 
-    function loadFilters() {
+  if (Array.isArray(perfume.tipos)) {
+    return perfume.tipos;
+  }
 
-      if (
-        typeof perfumes === "undefined"
-      ) return;
+  if (Array.isArray(perfume.presentaciones)) {
+    return perfume.presentaciones;
+  }
 
+  if (perfume.tipo) {
+    return [perfume.tipo];
+  }
 
-      const brands =
-        [
-          ...new Set(
-            perfumes.map(
-              perfume =>
-                perfume.marca
-            )
-          )
-        ].sort();
+  return [];
 
+}
 
-      brands.forEach(
-        brand => {
 
-          const option =
-            document.createElement(
-              "option"
-            );
+/* =========================================
+   TAMAÑOS
+========================================= */
 
-          option.value = brand;
+function getSizes(perfume) {
 
-          option.textContent = brand;
+  if (Array.isArray(perfume.tamanos)) {
+    return perfume.tamanos;
+  }
 
-          brandFilter.appendChild(
-            option
-          );
+  if (Array.isArray(perfume.tamaños)) {
+    return perfume.tamaños;
+  }
 
-        }
-      );
+  if (Array.isArray(perfume.ml)) {
+    return perfume.ml;
+  }
 
+  if (perfume.ml) {
+    return [perfume.ml];
+  }
 
-      const families =
-        [
-          ...new Set(
-            perfumes.map(
-              perfume =>
-                perfume.familia
-            )
-          )
-        ].sort();
+  return [];
 
+}
 
-      families.forEach(
-        family => {
 
-          const option =
-            document.createElement(
-              "option"
-            );
+/* =========================================
+   TEXTO DE PRESENTACIONES
+========================================= */
 
-          option.value = family;
+function presentationText(perfume) {
 
-          option.textContent = family;
+  const presentations =
+    getPresentations(perfume);
 
-          familyFilter.appendChild(
-            option
-          );
+  if (!presentations.length) {
+    return "Presentación por confirmar";
+  }
 
-        }
-      );
+  return presentations.join(" · ");
 
-    }
+}
 
 
-    /*
-    ==========================================================
-    CREAR TARJETAS
-    ==========================================================
-    */
+/* =========================================
+   TEXTO DE TAMAÑOS
+========================================= */
 
-    function renderProducts(list) {
+function sizeText(perfume) {
 
-      products.innerHTML = "";
+  const sizes =
+    getSizes(perfume);
 
+  if (!sizes.length) {
+    return "Tamaños por confirmar";
+  }
 
-      counter.textContent =
-        `${list.length} ${
-          list.length === 1
-            ? "perfume"
-            : "perfumes"
-        }`;
+  return sizes
+    .map(size => `${size} ml`)
+    .join(" · ");
 
+}
 
-      if (
-        list.length === 0
-      ) {
 
-        noResults.style.display =
-          "block";
+/* =========================================
+   CARGAR FILTROS
+========================================= */
 
-        return;
+function loadFilters() {
 
-      }
+  if (typeof perfumes === "undefined") {
+    return;
+  }
 
 
-      noResults.style.display =
-        "none";
+  const brands = [
+    ...new Set(
+      perfumes
+        .map(perfume => perfume.marca)
+        .filter(Boolean)
+    )
+  ].sort();
 
 
-      list.forEach(
-        perfume => {
+  brands.forEach(brand => {
 
-          const card =
-            document.createElement(
-              "article"
-            );
+    const option =
+      document.createElement("option");
 
+    option.value = brand;
+    option.textContent = brand;
 
-          card.className =
-            "product-card";
+    brandFilter.appendChild(option);
 
+  });
 
-          const message =
-            `Hola, me interesa ${perfume.nombre} de ${perfume.ml} ml. ¿Me pueden compartir precio y disponibilidad?`;
 
+  const families = [
+    ...new Set(
+      perfumes
+        .map(perfume => perfume.familia)
+        .filter(Boolean)
+    )
+  ].sort();
 
-          const whatsappUrl =
-            `https://wa.me/${WHATSAPP}?text=${
-              encodeURIComponent(message)
-            }`;
 
+  families.forEach(family => {
 
-          card.innerHTML = `
+    const option =
+      document.createElement("option");
 
-            <div class="product-image">
+    option.value = family;
+    option.textContent = family;
 
-              <div class="gender-badge">
-                ${perfume.genero}
-              </div>
+    familyFilter.appendChild(option);
 
-              <img
-                src="${perfume.imagen}"
-                alt="${perfume.nombre}"
-                onerror="this.style.opacity='0'"
-              >
+  });
 
-            </div>
+}
 
 
-            <div class="product-info">
+/* =========================================
+   CREAR TAG
+========================================= */
 
-              <div class="brand">
-                ${perfume.marca}
-              </div>
+function createTag(text) {
 
+  const tag =
+    document.createElement("span");
 
-              <h3 class="product-name">
-                ${perfume.nombre}
-              </h3>
+  tag.className = "tag";
+  tag.textContent = text;
 
+  return tag;
 
-              <div class="product-details">
-                ${perfume.tipo}
-                ·
-                ${perfume.ml} ml
-              </div>
+}
 
 
-              <a
-                href="${whatsappUrl}"
-                target="_blank"
-                class="consult-button"
-              >
-                💬 Consultar por WhatsApp
-              </a>
+/* =========================================
+   TARJETAS
+========================================= */
 
+function renderProducts(list) {
 
-              <button
-                class="details-button"
-                onclick="openProduct(${JSON.stringify(perfume.nombre)})"
-              >
-                Ver detalles
-              </button>
+  products.innerHTML = "";
 
-            </div>
 
-          `;
+  counter.textContent =
+    `${list.length} ${
+      list.length === 1
+        ? "perfume"
+        : "perfumes"
+    }`;
 
 
-          products.appendChild(card);
+  if (!list.length) {
 
-        }
-      );
+    noResults.style.display = "block";
 
-    }
+    return;
 
+  }
 
-    /*
-    ==========================================================
-    FILTRAR PRODUCTOS
-    ==========================================================
-    */
 
-    function filterProducts() {
+  noResults.style.display = "none";
 
-      if (
-        typeof perfumes === "undefined"
-      ) return;
 
+  list.forEach((perfume, index) => {
 
-      const text =
-        search.value
-          .toLowerCase()
-          .trim();
+    const card =
+      document.createElement("article");
 
+    card.className =
+      "product-card";
 
-      const selectedBrand =
-        brandFilter.value;
 
+    const presentations =
+      getPresentations(perfume);
 
-      const selectedType =
-        typeFilter.value;
 
+    const sizes =
+      getSizes(perfume);
 
-      const selectedMl =
-        mlFilter.value;
 
+    let presentationHTML = "";
 
-      const selectedFamily =
-        familyFilter.value;
+    presentations.forEach(type => {
 
+      presentationHTML += `
+        <span class="presentation-tag">
+          ${type}
+        </span>
+      `;
 
-      let result =
-        perfumes.filter(
-          perfume => {
+    });
 
-            const searchable = `
 
-              ${perfume.nombre}
+    const message =
+      `Hola, me interesa ${perfume.nombre} de ${perfume.marca}. ¿Me pueden compartir precio y disponibilidad?`;
 
-              ${perfume.marca}
 
-              ${perfume.genero}
+    const whatsappUrl =
+      `https://wa.me/${WHATSAPP}?text=${
+        encodeURIComponent(message)
+      }`;
 
-              ${perfume.familia}
 
-              ${perfume.acordes.join(" ")}
+    card.innerHTML = `
 
-              ${perfume.notas.join(" ")}
+      <div class="product-image">
 
-            `.toLowerCase();
+        <div class="gender-badge">
+          ${perfume.genero || "Unisex"}
+        </div>
 
+        <img
+          src="${perfume.imagen || ""}"
+          alt="${perfume.nombre || "Perfume"}"
+          onerror="this.style.opacity='0'"
+        >
 
-            const matchesText =
-              !text ||
-              searchable.includes(text);
+      </div>
 
 
-            const matchesGender =
-              currentGender === "Todos" ||
-              perfume.genero ===
-                currentGender;
+      <div class="product-info">
 
+        <div class="brand">
+          ${perfume.marca || ""}
+        </div>
 
-            const matchesBrand =
-              selectedBrand === "Todos" ||
-              perfume.marca ===
-                selectedBrand;
 
+        <h3 class="product-name">
+          ${perfume.nombre || ""}
+        </h3>
 
-            const matchesType =
-              selectedType === "Todos" ||
-              perfume.tipo ===
-                selectedType;
 
+        <div class="product-details">
 
-            const matchesMl =
-              selectedMl === "Todos" ||
-              perfume.ml ===
-                Number(selectedMl);
-
-
-            const matchesFamily =
-              selectedFamily === "Todos" ||
-              perfume.familia ===
-                selectedFamily;
-
-
-            return (
-              matchesText &&
-              matchesGender &&
-              matchesBrand &&
-              matchesType &&
-              matchesMl &&
-              matchesFamily
-            );
-
+          ${
+            presentations.length
+              ? presentations.join(" · ")
+              : "Presentación por confirmar"
           }
-        );
+
+          <br>
+
+          ${
+            sizes.length
+              ? sizes.map(size => `${size} ml`).join(" · ")
+              : "Tamaño por confirmar"
+          }
+
+        </div>
 
 
-      /*
-      ORDENAR
-      */
-
-      if (
-        sortFilter.value === "az"
-      ) {
-
-        result.sort(
-          (a, b) =>
-            a.nombre.localeCompare(
-              b.nombre
-            )
-        );
-
-      }
-
-
-      if (
-        sortFilter.value === "za"
-      ) {
-
-        result.sort(
-          (a, b) =>
-            b.nombre.localeCompare(
-              a.nombre
-            )
-        );
-
-      }
-
-
-      renderProducts(result);
-
-    }
-
-
-    /*
-    ==========================================================
-    CATEGORÍAS
-    ==========================================================
-    */
-
-    document
-      .querySelectorAll(".category")
-      .forEach(
-        button => {
-
-          button.addEventListener(
-            "click",
-            () => {
-
-              document
-                .querySelectorAll(
-                  ".category"
-                )
-                .forEach(
-                  btn =>
-                    btn.classList.remove(
-                      "active"
-                    )
-                );
-
-
-              button.classList.add(
-                "active"
-              );
-
-
-              currentGender =
-                button.dataset.gender;
-
-
-              filterProducts();
-
-            }
-          );
-
+        ${
+          presentationHTML
+            ? `
+              <div class="presentation-list">
+                ${presentationHTML}
+              </div>
+            `
+            : ""
         }
-      );
 
 
-    /*
-    ==========================================================
-    EVENTOS
-    ==========================================================
-    */
+        <a
+          href="${whatsappUrl}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="consult-button"
+        >
+          💬 Consultar por WhatsApp
+        </a>
 
-    search.addEventListener(
-      "input",
-      filterProducts
+
+        <button
+          class="details-button"
+          data-index="${index}"
+        >
+          Ver detalles
+        </button>
+
+      </div>
+
+    `;
+
+
+    const detailsButton =
+      card.querySelector(".details-button");
+
+
+    detailsButton.addEventListener(
+      "click",
+      () => {
+
+        openProduct(perfume);
+
+      }
     );
 
 
-    brandFilter.addEventListener(
-      "change",
-      filterProducts
-    );
+    products.appendChild(card);
+
+  });
+
+}
 
 
-    typeFilter.addEventListener(
-      "change",
-      filterProducts
-    );
+/* =========================================
+   FILTRAR
+========================================= */
+
+function filterProducts() {
+
+  if (typeof perfumes === "undefined") {
+
+    counter.textContent =
+      "No se pudo cargar el catálogo.";
+
+    return;
+
+  }
 
 
-    mlFilter.addEventListener(
-      "change",
-      filterProducts
-    );
+  const text =
+    search.value
+      .toLowerCase()
+      .trim();
 
 
-    familyFilter.addEventListener(
-      "change",
-      filterProducts
-    );
+  const selectedBrand =
+    brandFilter.value;
 
 
-    sortFilter.addEventListener(
-      "change",
-      filterProducts
-    );
+  const selectedType =
+    typeFilter.value;
 
 
-    /*
-    ==========================================================
-    ABRIR PERFUME
-    ==========================================================
-    */
-
-    function openProduct(name) {
-
-      const perfume =
-        perfumes.find(
-          item =>
-            item.nombre === name
-        );
+  const selectedMl =
+    mlFilter.value;
 
 
-      if (!perfume) return;
+  const selectedFamily =
+    familyFilter.value;
 
 
-      document.getElementById(
-        "modalImage"
-      ).src =
-        perfume.imagen;
-
-
-      document.getElementById(
-        "modalImage"
-      ).alt =
-        perfume.nombre;
-
-
-      document.getElementById(
-        "modalBrand"
-      ).textContent =
-        perfume.marca;
-
-
-      document.getElementById(
-        "modalName"
-      ).textContent =
-        perfume.nombre;
-
-
-      document.getElementById(
-        "modalGender"
-      ).textContent =
-        perfume.genero;
-
-
-      document.getElementById(
-        "modalMl"
-      ).textContent =
-        perfume.ml + " ml";
-
-
-      document.getElementById(
-        "modalType"
-      ).textContent =
-        perfume.tipo;
-
-
-      document.getElementById(
-        "modalFamily"
-      ).textContent =
-        perfume.familia;
+  let result =
+    perfumes.filter(perfume => {
 
 
       const accords =
-        document.getElementById(
-          "modalAccords"
-        );
-
-
-      accords.innerHTML = "";
-
-
-      perfume.acordes.forEach(
-        acorde => {
-
-          const tag =
-            document.createElement(
-              "span"
-            );
-
-          tag.className =
-            "tag";
-
-          tag.textContent =
-            acorde;
-
-          accords.appendChild(
-            tag
-          );
-
-        }
-      );
+        safeArray(perfume.acordes);
 
 
       const notes =
-        document.getElementById(
-          "modalNotes"
+        safeArray(perfume.notas);
+
+
+      const presentations =
+        getPresentations(perfume);
+
+
+      const sizes =
+        getSizes(perfume);
+
+
+      const searchable = `
+
+        ${perfume.nombre || ""}
+
+        ${perfume.marca || ""}
+
+        ${perfume.genero || ""}
+
+        ${perfume.familia || ""}
+
+        ${accords.join(" ")}
+
+        ${notes.join(" ")}
+
+        ${presentations.join(" ")}
+
+        ${sizes.join(" ")}
+
+      `.toLowerCase();
+
+
+      const matchesText =
+        !text ||
+        searchable.includes(text);
+
+
+      const matchesGender =
+        currentGender === "Todos" ||
+        perfume.genero === currentGender;
+
+
+      const matchesBrand =
+        selectedBrand === "Todos" ||
+        perfume.marca === selectedBrand;
+
+
+      const matchesType =
+        selectedType === "Todos" ||
+        presentations.includes(selectedType);
+
+
+      const matchesMl =
+        selectedMl === "Todos" ||
+        sizes.map(Number).includes(
+          Number(selectedMl)
         );
 
 
-      notes.innerHTML = "";
+      const matchesFamily =
+        selectedFamily === "Todos" ||
+        perfume.familia === selectedFamily;
 
 
-      perfume.notas.forEach(
-        nota => {
-
-          const tag =
-            document.createElement(
-              "span"
-            );
-
-          tag.className =
-            "tag";
-
-          tag.textContent =
-            nota;
-
-          notes.appendChild(
-            tag
-          );
-
-        }
+      return (
+        matchesText &&
+        matchesGender &&
+        matchesBrand &&
+        matchesType &&
+        matchesMl &&
+        matchesFamily
       );
 
-
-      const message =
-        `Hola, me interesa ${perfume.nombre} de ${perfume.ml} ml. ¿Me pueden compartir precio y disponibilidad?`;
+    });
 
 
-      document.getElementById(
-        "modalWhatsapp"
-      ).href =
-        `https://wa.me/${WHATSAPP}?text=${
-          encodeURIComponent(message)
-        }`;
+  /* =========================
+     ORDEN
+  ========================= */
+
+  if (sortFilter.value === "az") {
+
+    result.sort((a, b) =>
+      (a.nombre || "")
+        .localeCompare(
+          b.nombre || ""
+        )
+    );
+
+  }
 
 
-      modal.classList.add(
+  if (sortFilter.value === "za") {
+
+    result.sort((a, b) =>
+      (b.nombre || "")
+        .localeCompare(
+          a.nombre || ""
+        )
+    );
+
+  }
+
+
+  renderProducts(result);
+
+}
+
+
+/* =========================================
+   CATEGORÍAS
+========================================= */
+
+document
+  .querySelectorAll(".category")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        document
+          .querySelectorAll(".category")
+          .forEach(btn =>
+            btn.classList.remove("active")
+          );
+
+
+        button.classList.add("active");
+
+
+        currentGender =
+          button.dataset.gender;
+
+
+        filterProducts();
+
+      }
+    );
+
+  });
+
+
+/* =========================================
+   EVENTOS
+========================================= */
+
+search.addEventListener(
+  "input",
+  filterProducts
+);
+
+brandFilter.addEventListener(
+  "change",
+  filterProducts
+);
+
+typeFilter.addEventListener(
+  "change",
+  filterProducts
+);
+
+mlFilter.addEventListener(
+  "change",
+  filterProducts
+);
+
+familyFilter.addEventListener(
+  "change",
+  filterProducts
+);
+
+sortFilter.addEventListener(
+  "change",
+  filterProducts
+);
+
+
+/* =========================================
+   ABRIR MODAL
+========================================= */
+
+function openProduct(perfume) {
+
+  if (!perfume) return;
+
+
+  document.getElementById(
+    "modalImage"
+  ).src =
+    perfume.imagen || "";
+
+
+  document.getElementById(
+    "modalImage"
+  ).alt =
+    perfume.nombre || "Perfume";
+
+
+  document.getElementById(
+    "modalBrand"
+  ).textContent =
+    perfume.marca || "";
+
+
+  document.getElementById(
+    "modalName"
+  ).textContent =
+    perfume.nombre || "";
+
+
+  document.getElementById(
+    "modalGender"
+  ).textContent =
+    perfume.genero || "Unisex";
+
+
+  /* =========================
+     TAMAÑOS
+  ========================= */
+
+  const modalMl =
+    document.getElementById("modalMl");
+
+  modalMl.innerHTML = "";
+
+
+  const sizes =
+    getSizes(perfume);
+
+
+  if (sizes.length) {
+
+    sizes.forEach(size => {
+
+      modalMl.appendChild(
+        createTag(`${size} ml`)
+      );
+
+    });
+
+  } else {
+
+    modalMl.appendChild(
+      createTag("Por confirmar")
+    );
+
+  }
+
+
+  /* =========================
+     PRESENTACIONES
+  ========================= */
+
+  const modalType =
+    document.getElementById("modalType");
+
+  modalType.innerHTML = "";
+
+
+  const presentations =
+    getPresentations(perfume);
+
+
+  if (presentations.length) {
+
+    presentations.forEach(type => {
+
+      modalType.appendChild(
+        createTag(type)
+      );
+
+    });
+
+  } else {
+
+    modalType.appendChild(
+      createTag("Por confirmar")
+    );
+
+  }
+
+
+  /* =========================
+     FAMILIA
+  ========================= */
+
+  document.getElementById(
+    "modalFamily"
+  ).textContent =
+    perfume.familia ||
+    "Por confirmar";
+
+
+  /* =========================
+     ACORDES
+  ========================= */
+
+  const accords =
+    document.getElementById(
+      "modalAccords"
+    );
+
+  accords.innerHTML = "";
+
+
+  const accordList =
+    safeArray(perfume.acordes);
+
+
+  if (accordList.length) {
+
+    accordList.forEach(acorde => {
+
+      accords.appendChild(
+        createTag(acorde)
+      );
+
+    });
+
+  } else {
+
+    accords.appendChild(
+      createTag("Por confirmar")
+    );
+
+  }
+
+
+  /* =========================
+     NOTAS
+  ========================= */
+
+  const notes =
+    document.getElementById(
+      "modalNotes"
+    );
+
+  notes.innerHTML = "";
+
+
+  const noteList =
+    safeArray(perfume.notas);
+
+
+  if (noteList.length) {
+
+    noteList.forEach(nota => {
+
+      notes.appendChild(
+        createTag(nota)
+      );
+
+    });
+
+  } else {
+
+    notes.appendChild(
+      createTag("Por confirmar")
+    );
+
+  }
+
+
+  /* =========================
+     WHATSAPP
+  ========================= */
+
+  const message =
+    `Hola, me interesa ${perfume.nombre} de ${perfume.marca}. ¿Me pueden compartir precio y disponibilidad?`;
+
+
+  document.getElementById(
+    "modalWhatsapp"
+  ).href =
+    `https://wa.me/${WHATSAPP}?text=${
+      encodeURIComponent(message)
+    }`;
+
+
+  modal.classList.add("active");
+
+}
+
+
+/* =========================================
+   CERRAR MODAL
+========================================= */
+
+closeModal.addEventListener(
+  "click",
+  () => {
+
+    modal.classList.remove("active");
+
+  }
+);
+
+
+modal.addEventListener(
+  "click",
+  event => {
+
+    if (event.target === modal) {
+
+      modal.classList.remove("active");
+
+    }
+
+  }
+);
+
+
+/* =========================================
+   ESC PARA CERRAR
+========================================= */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      modal.classList.remove(
         "active"
       );
 
     }
 
-
-    /*
-    ==========================================================
-    CERRAR MODAL
-    ==========================================================
-    */
-
-    closeModal.addEventListener(
-      "click",
-      () => {
-
-        modal.classList.remove(
-          "active"
-        );
-
-      }
-    );
+  }
+);
 
 
-    modal.addEventListener(
-      "click",
-      event => {
+/* =========================================
+   INICIAR
+========================================= */
 
-        if (
-          event.target === modal
-        ) {
+if (typeof perfumes !== "undefined") {
 
-          modal.classList.remove(
-            "active"
-          );
+  loadFilters();
 
-        }
+  renderProducts(perfumes);
 
-      }
-    );
+} else {
 
+  counter.textContent =
+    "No se pudo cargar el catálogo.";
 
-    /*
-    ==========================================================
-    INICIAR
-    ==========================================================
-    */
+  console.error(
+    "No se encontró perfumes.js"
+  );
 
-    loadFilters();
+}
 
-    renderProducts(
-      perfumes
-    );
-
-  </script>
-
+</script>
 
 </body>
 </html>
