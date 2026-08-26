@@ -150,7 +150,7 @@ const perfumes = [
 
 
   // =========================================================
-  // VERSACE
+  // VERSACE - HOMBRE
   // =========================================================
 
   {
@@ -328,7 +328,7 @@ const perfumes = [
 
 
   // =========================================================
-  // CAROLINA HERRERA
+  // CAROLINA HERRERA - HOMBRE
   // =========================================================
 
   {
@@ -414,11 +414,6 @@ const perfumes = [
     notas: "Pimienta, ciruela, trufa, vetiver",
     imagen: "imagenes/ch-bad-boy-cobalt.jpg"
   },
-
-
-  // =========================================================
-  // CAROLINA HERRERA - 212
-  // =========================================================
 
   {
     nombre: "212 VIP Black",
@@ -564,7 +559,7 @@ const perfumes = [
 
 
   // =========================================================
-  // MOSCHINO
+  // MOSCHINO - HOMBRE
   // =========================================================
 
   {
@@ -593,7 +588,7 @@ const perfumes = [
 
 
   // =========================================================
-  // GIORGIO ARMANI
+  // GIORGIO ARMANI - HOMBRE
   // =========================================================
 
   {
@@ -634,7 +629,7 @@ const perfumes = [
 
 
   // =========================================================
-  // DIOR
+  // DIOR - HOMBRE
   // =========================================================
 
   {
@@ -675,7 +670,7 @@ const perfumes = [
 
 
   // =========================================================
-  // VALENTINO
+  // VALENTINO - HOMBRE
   // =========================================================
 
   {
@@ -748,6 +743,712 @@ const perfumes = [
     acordes: "Citrico, cafe, amaderado, fresco",
     notas: "Bergamota, cafe, vetiver, resina",
     imagen: "imagenes/valentino-born-in-roma-green-stravaganza.jpg"
+  },
+
+
+  // =========================================================
+  // JAFRA - MUJER
+  // =========================================================
+
+  {
+    nombre: "Diablita Negro",
+    marca: "Jafra",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Oriental Floral",
+    acordes: "Dulce, floral, ambarado, afrutado",
+    notas: "Frutas, flores, vainilla, ambar",
+    imagen: "imagenes/Diablita-Negro-Jafra.jpg"
+  },
+
+  {
+    nombre: "Diablita Verde",
+    marca: "Jafra",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Verde, floral, fresco, afrutado",
+    notas: "Frutas, flores, notas verdes, almizcle",
+    imagen: "imagenes/Diablita-Verde-Jafra.jpg"
+  },
+
+  {
+    nombre: "Diablita Azul",
+    marca: "Jafra",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Acuatica",
+    acordes: "Acuatico, floral, fresco, citrico",
+    notas: "Frutas, flores, notas acuaticas, almizcle",
+    imagen: "imagenes/Diablita-Azul-Jafra.jpg"
+  },
+
+  {
+    nombre: "Diablita Piece Azul",
+    marca: "Jafra",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Floral, afrutado, dulce, fresco",
+    notas: "Frutas, flores, vainilla, almizcle",
+    imagen: "imagenes/Diablita-Piece-Azul-Jafra.jpg"
+  },
+
+  {
+    nombre: "Diablita Morado",
+    marca: "Jafra",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Oriental",
+    acordes: "Dulce, floral, ambarado, afrutado",
+    notas: "Frutas, flores, vainilla, ambar",
+    imagen: "imagenes/Diablita-Morado-Jafra.jpg"
+  },
+
+  {
+    nombre: "Diablita Cool Morado",
+    marca: "Jafra",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Fresco, floral, afrutado, dulce",
+    notas: "Frutas, flores, notas frescas, almizcle",
+    imagen: "imagenes/Diablita-Cool-Morado-Jafra.jpg"
+  },
+
+  {
+    nombre: "Diablita Rosa 2",
+    marca: "Jafra",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Floral, dulce, afrutado, fresco",
+    notas: "Frutas, flores, vainilla, almizcle",
+    imagen: "imagenes/Diablita-Rosa-Jafra2.jpg"
+  },
+
+  {
+    nombre: "Diablita Rosa",
+    marca: "Jafra",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Floral, dulce, afrutado, suave",
+    notas: "Frutas, flores, vainilla, almizcle",
+    imagen: "imagenes/Diablita-Rosa-Jafra.jpg"
+  },
+
+  {
+    nombre: "Diablita Rojo",
+    marca: "Jafra",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Oriental",
+    acordes: "Dulce, floral, especiado, ambarado",
+    notas: "Frutas, flores, especias, ambar",
+    imagen: "imagenes/Diablita-Rojo-Jafra.jpg"
+  },
+
+  {
+    nombre: "Diablita Negro Set",
+    marca: "Jafra",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Oriental Floral",
+    acordes: "Dulce, floral, ambarado, afrutado",
+    notas: "Frutas, flores, vainilla, ambar",
+    imagen: "imagenes/Diablita-Negro-Jafra-set.jpg"
+  },
+
+
+  // =========================================================
+  // KATY PERRY
+  // =========================================================
+
+  {
+    nombre: "Meow",
+    marca: "Katy Perry",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal Gourmand",
+    acordes: "Dulce, floral, afrutado, avainillado",
+    notas: "Pera, gardenia, madreselva, vainilla",
+    imagen: "imagenes/Meow-Katy-Perry.jpg"
+  },
+
+
+  // =========================================================
+  // ARMAF
+  // =========================================================
+
+  {
+    nombre: "Club de Nuit White Imperiale",
+    marca: "Armaf",
+    ml: "105",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Floral, afrutado, fresco, dulce",
+    notas: "Litchi, ruibarbo, vainilla, rosa",
+    imagen: "imagenes/Club-De-Nuit-White-Imperiale-Armaf.jpg"
+  },
+
+  {
+    nombre: "Club de Nuit Imperiale",
+    marca: "Armaf",
+    ml: "105",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Floral, afrutado, dulce, fresco",
+    notas: "Litchi, rosa, vainilla, almizcle",
+    imagen: "imagenes/Club-De-Nuit-Imperiale-Armaf.jpg"
+  },
+
+  {
+    nombre: "Club de Nuit Woman",
+    marca: "Armaf",
+    ml: "105",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Chipre Frutal",
+    acordes: "Citrico, afrutado, floral, dulce",
+    notas: "Naranja, durazno, rosa, jazmin",
+    imagen: "imagenes/Club-De-Nuit-Woman-Armaf.jpg"
+  },
+
+
+  // =========================================================
+  // LATTAFA
+  // =========================================================
+
+  {
+    nombre: "Fakhar Rose",
+    marca: "Lattafa",
+    ml: "100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral",
+    acordes: "Floral, dulce, afrutado, amaderado",
+    notas: "Frutas, rosa, jazmin, vainilla",
+    imagen: "imagenes/Fakhar-Rose-Lattafa.jpg"
+  },
+
+  {
+    nombre: "Yara Elixir",
+    marca: "Lattafa",
+    ml: "100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Gourmand",
+    acordes: "Dulce, avainillado, floral, afrutado",
+    notas: "Fresa, vainilla, flores, caramelo",
+    imagen: "imagenes/Yara-Elixir-Lattafa.jpg"
+  },
+
+  {
+    nombre: "Yara Candy",
+    marca: "Lattafa",
+    ml: "100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Gourmand Frutal",
+    acordes: "Dulce, afrutado, gourmand, avainillado",
+    notas: "Frutas, caramelo, vainilla, almizcle",
+    imagen: "imagenes/Yara-Candy-Lattafa.jpg"
+  },
+
+  {
+    nombre: "Yara Moi",
+    marca: "Lattafa",
+    ml: "100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Dulce, floral, afrutado, amaderado",
+    notas: "Durazno, jazmin, caramelo, vainilla",
+    imagen: "imagenes/Yara-Moi-Lattafa.jpg"
+  },
+
+  {
+    nombre: "Yara",
+    marca: "Lattafa",
+    ml: "100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Gourmand",
+    acordes: "Dulce, avainillado, tropical, afrutado",
+    notas: "Orquidea, heliotropo, mandarina, vainilla",
+    imagen: "imagenes/Yara-Lattafa.jpg"
+  },
+
+
+  // =========================================================
+  // MOSCHINO - MUJER
+  // =========================================================
+
+  {
+    nombre: "Toy 2 Bubble Gum",
+    marca: "Moschino",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Toilette",
+    familia: "Floral Frutal",
+    acordes: "Dulce, afrutado, floral, citrico",
+    notas: "Durazno, cítricos, rosa, vainilla",
+    imagen: "imagenes/Toy-2-Bubble-Gum-Moschino.jpg"
+  },
+
+  {
+    nombre: "Toy 2",
+    marca: "Moschino",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Toilette",
+    familia: "Floral Amaderada Almizclada",
+    acordes: "Floral, almizclado, fresco, amaderado",
+    notas: "Manzana, mandarina, magnolia, almizcle",
+    imagen: "imagenes/Toy-2-Moschino.jpg"
+  },
+
+
+  // =========================================================
+  // GIORGIO ARMANI - MUJER
+  // =========================================================
+
+  {
+    nombre: "Si",
+    marca: "Giorgio Armani",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Chipre Frutal",
+    acordes: "Afrutado, dulce, amaderado, floral",
+    notas: "Grosella negra, rosa, vainilla, pachuli",
+    imagen: "imagenes/Si-Giorgio-Armani.jpg"
+  },
+
+  {
+    nombre: "My Way",
+    marca: "Giorgio Armani",
+    ml: "30, 50, 90",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral",
+    acordes: "Floral, citrico, blanco, dulce",
+    notas: "Bergamota, azahar, tuberosa, vainilla",
+    imagen: "imagenes/My-Way-Giorgio-Armani.jpg"
+  },
+
+
+  // =========================================================
+  // GIVENCHY
+  // =========================================================
+
+  {
+    nombre: "Irresistible",
+    marca: "Givenchy",
+    ml: "35, 50, 80",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Floral, afrutado, dulce, amaderado",
+    notas: "Pera, rosa, iris, almizcle",
+    imagen: "imagenes/Irresistible-Givenchy.jpg"
+  },
+
+  {
+    nombre: "L'Interdit",
+    marca: "Givenchy",
+    ml: "35, 50, 80",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Blanco",
+    acordes: "Floral, blanco, dulce, amaderado",
+    notas: "Azahar, tuberosa, jazmin, pachuli",
+    imagen: "imagenes/LInterdit-Givenchy.jpg"
+  },
+
+
+  // =========================================================
+  // DOLCE & GABBANA
+  // =========================================================
+
+  {
+    nombre: "Q Elixir",
+    marca: "Dolce & Gabbana",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Afrutado, dulce, floral, ambarado",
+    notas: "Cereza, jazmin, vainilla, almizcle",
+    imagen: "imagenes/Q-Dolce-Gabbana-Elixir.jpg"
+  },
+
+  {
+    nombre: "Q",
+    marca: "Dolce & Gabbana",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Citrico, afrutado, floral, amaderado",
+    notas: "Limón, naranja sanguina, jazmin, cereza",
+    imagen: "imagenes/Q-Dolce-Gabbana.jpg"
+  },
+
+  {
+    nombre: "Light Blue Eau Intense",
+    marca: "Dolce & Gabbana",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Citrico, fresco, acuatico, afrutado",
+    notas: "Limón, manzana, jazmin, almizcle",
+    imagen: "imagenes/Light-Blue-Eau-Intense-Dolce-Gabbana.jpg"
+  },
+
+  {
+    nombre: "Light Blue",
+    marca: "Dolce & Gabbana",
+    ml: "25, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Toilette",
+    familia: "Floral Frutal",
+    acordes: "Citrico, afrutado, fresco, floral",
+    notas: "Limón, manzana, cedro, jazmin",
+    imagen: "imagenes/Light-Blue-Dolce-Gabbana.jpg"
+  },
+
+
+  // =========================================================
+  // VERSACE - MUJER
+  // =========================================================
+
+  {
+    nombre: "Dylan Purple",
+    marca: "Versace",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Afrutado, floral, dulce, citrico",
+    notas: "Pera, bergamota, fresia, ambroxan",
+    imagen: "imagenes/Dylan-Purple-Versace.jpg"
+  },
+
+  {
+    nombre: "Crystal Noir",
+    marca: "Versace",
+    ml: "30, 50, 90",
+    genero: "Mujer",
+    tipo: "Eau de Toilette",
+    familia: "Oriental Floral",
+    acordes: "Especiado, floral, ambarado, balsamico",
+    notas: "Pimienta, jengibre, peonia, coco",
+    imagen: "imagenes/Crystal-Noir-Versace.jpg"
+  },
+
+  {
+    nombre: "Bright Crystal",
+    marca: "Versace",
+    ml: "30, 50, 90",
+    genero: "Mujer",
+    tipo: "Eau de Toilette",
+    familia: "Floral Frutal",
+    acordes: "Floral, fresco, afrutado, acuatico",
+    notas: "Yuzu, granada, peonia, magnolia",
+    imagen: "imagenes/Bright-Crystal-Versace.jpg"
+  },
+
+
+  // =========================================================
+  // VALENTINO - MUJER
+  // =========================================================
+
+  {
+    nombre: "Donna Born in Roma Intense",
+    marca: "Valentino",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Oriental Floral",
+    acordes: "Vainilla, dulce, floral, ambarado",
+    notas: "Vainilla, jazmin, benjuí",
+    imagen: "imagenes/Donna-Born-In-Roma-Intense-Valentino.jpg"
+  },
+
+  {
+    nombre: "Donna Born in Roma",
+    marca: "Valentino",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Oriental Floral",
+    acordes: "Floral, dulce, amaderado, avainillado",
+    notas: "Grosella negra, jazmin, vainilla, madera de cachemira",
+    imagen: "imagenes/Donna-Born-In-Roma-Valentino.jpg"
+  },
+
+
+  // =========================================================
+  // YVES SAINT LAURENT
+  // =========================================================
+
+  {
+    nombre: "Libre Intense",
+    marca: "YSL",
+    ml: "30, 50, 90",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Oriental Fougere",
+    acordes: "Vainilla, floral, aromático, dulce",
+    notas: "Lavanda, azahar, orquídea, vainilla",
+    imagen: "imagenes/Libre-Intense-YSL.jpg"
+  },
+
+  {
+    nombre: "Mon Paris",
+    marca: "YSL",
+    ml: "30, 50, 90",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Chipre Frutal",
+    acordes: "Afrutado, dulce, floral, amaderado",
+    notas: "Fresa, frambuesa, peonia, pachuli",
+    imagen: "imagenes/Mon-Paris-YSL.jpg"
+  },
+
+  {
+    nombre: "Black Opium",
+    marca: "YSL",
+    ml: "30, 50, 90",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Oriental Vainilla",
+    acordes: "Cafe, dulce, vainilla, floral",
+    notas: "Cafe, pera, azahar, vainilla",
+    imagen: "imagenes/Black-Opium-YSL.jpg"
+  },
+
+  {
+    nombre: "Libre",
+    marca: "YSL",
+    ml: "30, 50, 90",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Aromatica Fougere",
+    acordes: "Floral, aromatico, citrico, dulce",
+    notas: "Lavanda, mandarina, azahar, vainilla",
+    imagen: "imagenes/Libre-YSL.jpg"
+  },
+
+
+  // =========================================================
+  // DIOR - MUJER
+  // =========================================================
+
+  {
+    nombre: "Hypnotic Poison",
+    marca: "Dior",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Toilette",
+    familia: "Oriental Vainilla",
+    acordes: "Vainilla, dulce, amaderado, almendrado",
+    notas: "Almendra, jazmin, vainilla, sándalo",
+    imagen: "imagenes/Hypnotic-Poison-Dior.jpg"
+  },
+
+  {
+    nombre: "Miss Dior Parfum",
+    marca: "Dior",
+    ml: "30, 50, 80",
+    genero: "Mujer",
+    tipo: "Parfum",
+    familia: "Floral Frutal",
+    acordes: "Floral, afrutado, amaderado, dulce",
+    notas: "Mandarina, jazmin, fresa, pachuli",
+    imagen: "imagenes/Miss-Dior-Parfum-Dior.jpg"
+  },
+
+  {
+    nombre: "J'adore",
+    marca: "Dior",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral",
+    acordes: "Floral, blanco, afrutado, dulce",
+    notas: "Ylang-ylang, jazmin, rosa, violeta",
+    imagen: "imagenes/JAdore-Dior.jpg"
+  },
+
+  {
+    nombre: "Miss Dior Blooming Bouquet",
+    marca: "Dior",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Toilette",
+    familia: "Floral",
+    acordes: "Floral, fresco, rosado, afrutado",
+    notas: "Mandarina, peonia, rosa, almizcle",
+    imagen: "imagenes/Miss-Dior-Blooming-Bouquet-Dior.jpg"
+  },
+
+  {
+    nombre: "Miss Dior",
+    marca: "Dior",
+    ml: "30, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral",
+    acordes: "Floral, afrutado, amaderado, dulce",
+    notas: "Rosa, peonia, lirio de los valles, iris",
+    imagen: "imagenes/Miss-Dior-Dior.jpg"
+  },
+
+
+  // =========================================================
+  // CHANEL
+  // =========================================================
+
+  {
+    nombre: "Gabrielle",
+    marca: "Chanel",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral",
+    acordes: "Floral, blanco, citrico, dulce",
+    notas: "Jazmin, ylang-ylang, azahar, nardo",
+    imagen: "imagenes/Gabrielle-Chanel.jpg"
+  },
+
+  {
+    nombre: "N°5",
+    marca: "Chanel",
+    ml: "35, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Aldehidica",
+    acordes: "Floral, aldehidico, atalcado, amaderado",
+    notas: "Aldehidos, ylang-ylang, rosa, jazmin",
+    imagen: "imagenes/N5-Chanel.jpg"
+  },
+
+  {
+    nombre: "Chance Eau Fraiche",
+    marca: "Chanel",
+    ml: "35, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Toilette",
+    familia: "Chipre Floral",
+    acordes: "Citrico, amaderado, fresco, floral",
+    notas: "Cidra, jazmin, teca, vetiver",
+    imagen: "imagenes/Chance-Eau-Fraiche-Chanel.jpg"
+  },
+
+  {
+    nombre: "Chance Eau Tendre",
+    marca: "Chanel",
+    ml: "35, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Toilette",
+    familia: "Floral Frutal",
+    acordes: "Floral, afrutado, citrico, fresco",
+    notas: "Membrillo, pomelo, jazmin, rosa",
+    imagen: "imagenes/Chance-Eau-Tendre-Chanel.jpg"
+  },
+
+  {
+    nombre: "Coco Mademoiselle",
+    marca: "Chanel",
+    ml: "35, 50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Chipre Floral",
+    acordes: "Citrico, amaderado, dulce, floral",
+    notas: "Naranja, bergamota, rosa, pachuli",
+    imagen: "imagenes/Coco-Mademoiselle-Chanel.jpg"
+  },
+
+
+  // =========================================================
+  // CAROLINA HERRERA - MUJER
+  // =========================================================
+
+  {
+    nombre: "CH",
+    marca: "Carolina Herrera",
+    ml: "50, 100",
+    genero: "Mujer",
+    tipo: "Eau de Toilette",
+    familia: "Floral Frutal",
+    acordes: "Floral, dulce, afrutado, amaderado",
+    notas: "Frutas, rosa, jazmin, praliné",
+    imagen: "imagenes/CH-CH.jpg"
+  },
+
+  {
+    nombre: "212 VIP Rosé",
+    marca: "Carolina Herrera",
+    ml: "50, 80, 125",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Frutal",
+    acordes: "Champagne, afrutado, floral, dulce",
+    notas: "Champagne, frutas, flor de durazno, almizcle",
+    imagen: "imagenes/212-VIP-Rose-CH.jpg"
+  },
+
+  {
+    nombre: "Good Girl Supreme",
+    marca: "Carolina Herrera",
+    ml: "30, 50, 80",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Oriental Floral",
+    acordes: "Dulce, floral, afrutado, avainillado",
+    notas: "Frutos rojos, jazmin, haba tonka, vetiver",
+    imagen: "imagenes/Good-Girl-Supreme-CH.jpg"
+  },
+
+  {
+    nombre: "Good Girl Blush",
+    marca: "Carolina Herrera",
+    ml: "30, 50, 80",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Floral Oriental",
+    acordes: "Floral, dulce, avainillado, citrico",
+    notas: "Bergamota, ylang-ylang, peonia, vainilla",
+    imagen: "imagenes/Good-Girl-Blush-CH.jpg"
+  },
+
+  {
+    nombre: "Good Girl",
+    marca: "Carolina Herrera",
+    ml: "30, 50, 80",
+    genero: "Mujer",
+    tipo: "Eau de Parfum",
+    familia: "Oriental Floral",
+    acordes: "Dulce, floral, avainillado, amaderado",
+    notas: "Almendra, cafe, jazmin, tonka",
+    imagen: "imagenes/Good-Girl-CH.jpg"
   }
 
 ];
